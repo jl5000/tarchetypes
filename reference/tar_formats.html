@@ -123,131 +123,131 @@
     <p>Target archetypes for specialized storage formats.</p>
     </div>
 
-    <pre class="usage"><span class='fu'>tar_file</span>(
-  <span class='kw'>name</span>,
-  <span class='kw'>command</span>,
-  pattern = <span class='kw'>NULL</span>,
-  tidy_eval = <span class='kw'>targets</span>::<span class='fu'><a href='https://rdrr.io/pkg/targets/man/tar_option_get.html'>tar_option_get</a></span>(<span class='st'>"tidy_eval"</span>),
-  packages = <span class='kw'>targets</span>::<span class='fu'><a href='https://rdrr.io/pkg/targets/man/tar_option_get.html'>tar_option_get</a></span>(<span class='st'>"packages"</span>),
-  library = <span class='kw'>targets</span>::<span class='fu'><a href='https://rdrr.io/pkg/targets/man/tar_option_get.html'>tar_option_get</a></span>(<span class='st'>"library"</span>),
-  iteration = <span class='kw'>targets</span>::<span class='fu'><a href='https://rdrr.io/pkg/targets/man/tar_option_get.html'>tar_option_get</a></span>(<span class='st'>"iteration"</span>),
-  error = <span class='kw'>targets</span>::<span class='fu'><a href='https://rdrr.io/pkg/targets/man/tar_option_get.html'>tar_option_get</a></span>(<span class='st'>"error"</span>),
-  memory = <span class='kw'>targets</span>::<span class='fu'><a href='https://rdrr.io/pkg/targets/man/tar_option_get.html'>tar_option_get</a></span>(<span class='st'>"memory"</span>),
-  deployment = <span class='kw'>targets</span>::<span class='fu'><a href='https://rdrr.io/pkg/targets/man/tar_option_get.html'>tar_option_get</a></span>(<span class='st'>"deployment"</span>),
-  priority = <span class='kw'>targets</span>::<span class='fu'><a href='https://rdrr.io/pkg/targets/man/tar_option_get.html'>tar_option_get</a></span>(<span class='st'>"priority"</span>),
-  resources = <span class='kw'>targets</span>::<span class='fu'><a href='https://rdrr.io/pkg/targets/man/tar_option_get.html'>tar_option_get</a></span>(<span class='st'>"resources"</span>),
-  storage = <span class='kw'>targets</span>::<span class='fu'><a href='https://rdrr.io/pkg/targets/man/tar_option_get.html'>tar_option_get</a></span>(<span class='st'>"storage"</span>),
-  retrieval = <span class='kw'>targets</span>::<span class='fu'><a href='https://rdrr.io/pkg/targets/man/tar_option_get.html'>tar_option_get</a></span>(<span class='st'>"retrieval"</span>),
-  cue = <span class='kw'>targets</span>::<span class='fu'><a href='https://rdrr.io/pkg/targets/man/tar_option_get.html'>tar_option_get</a></span>(<span class='st'>"cue"</span>)
-)
+    <pre class="usage"><span class='fu'>tar_file</span><span class='op'>(</span>
+  <span class='va'>name</span>,
+  <span class='va'>command</span>,
+  pattern <span class='op'>=</span> <span class='cn'>NULL</span>,
+  tidy_eval <span class='op'>=</span> <span class='fu'>targets</span><span class='fu'>::</span><span class='fu'><a href='https://wlandau.github.io/targets/reference/tar_option_get.html'>tar_option_get</a></span><span class='op'>(</span><span class='st'>"tidy_eval"</span><span class='op'>)</span>,
+  packages <span class='op'>=</span> <span class='fu'>targets</span><span class='fu'>::</span><span class='fu'><a href='https://wlandau.github.io/targets/reference/tar_option_get.html'>tar_option_get</a></span><span class='op'>(</span><span class='st'>"packages"</span><span class='op'>)</span>,
+  library <span class='op'>=</span> <span class='fu'>targets</span><span class='fu'>::</span><span class='fu'><a href='https://wlandau.github.io/targets/reference/tar_option_get.html'>tar_option_get</a></span><span class='op'>(</span><span class='st'>"library"</span><span class='op'>)</span>,
+  iteration <span class='op'>=</span> <span class='fu'>targets</span><span class='fu'>::</span><span class='fu'><a href='https://wlandau.github.io/targets/reference/tar_option_get.html'>tar_option_get</a></span><span class='op'>(</span><span class='st'>"iteration"</span><span class='op'>)</span>,
+  error <span class='op'>=</span> <span class='fu'>targets</span><span class='fu'>::</span><span class='fu'><a href='https://wlandau.github.io/targets/reference/tar_option_get.html'>tar_option_get</a></span><span class='op'>(</span><span class='st'>"error"</span><span class='op'>)</span>,
+  memory <span class='op'>=</span> <span class='fu'>targets</span><span class='fu'>::</span><span class='fu'><a href='https://wlandau.github.io/targets/reference/tar_option_get.html'>tar_option_get</a></span><span class='op'>(</span><span class='st'>"memory"</span><span class='op'>)</span>,
+  deployment <span class='op'>=</span> <span class='fu'>targets</span><span class='fu'>::</span><span class='fu'><a href='https://wlandau.github.io/targets/reference/tar_option_get.html'>tar_option_get</a></span><span class='op'>(</span><span class='st'>"deployment"</span><span class='op'>)</span>,
+  priority <span class='op'>=</span> <span class='fu'>targets</span><span class='fu'>::</span><span class='fu'><a href='https://wlandau.github.io/targets/reference/tar_option_get.html'>tar_option_get</a></span><span class='op'>(</span><span class='st'>"priority"</span><span class='op'>)</span>,
+  resources <span class='op'>=</span> <span class='fu'>targets</span><span class='fu'>::</span><span class='fu'><a href='https://wlandau.github.io/targets/reference/tar_option_get.html'>tar_option_get</a></span><span class='op'>(</span><span class='st'>"resources"</span><span class='op'>)</span>,
+  storage <span class='op'>=</span> <span class='fu'>targets</span><span class='fu'>::</span><span class='fu'><a href='https://wlandau.github.io/targets/reference/tar_option_get.html'>tar_option_get</a></span><span class='op'>(</span><span class='st'>"storage"</span><span class='op'>)</span>,
+  retrieval <span class='op'>=</span> <span class='fu'>targets</span><span class='fu'>::</span><span class='fu'><a href='https://wlandau.github.io/targets/reference/tar_option_get.html'>tar_option_get</a></span><span class='op'>(</span><span class='st'>"retrieval"</span><span class='op'>)</span>,
+  cue <span class='op'>=</span> <span class='fu'>targets</span><span class='fu'>::</span><span class='fu'><a href='https://wlandau.github.io/targets/reference/tar_option_get.html'>tar_option_get</a></span><span class='op'>(</span><span class='st'>"cue"</span><span class='op'>)</span>
+<span class='op'>)</span>
 
-<span class='fu'>tar_rds</span>(
-  <span class='kw'>name</span>,
-  <span class='kw'>command</span>,
-  pattern = <span class='kw'>NULL</span>,
-  tidy_eval = <span class='kw'>targets</span>::<span class='fu'><a href='https://rdrr.io/pkg/targets/man/tar_option_get.html'>tar_option_get</a></span>(<span class='st'>"tidy_eval"</span>),
-  packages = <span class='kw'>targets</span>::<span class='fu'><a href='https://rdrr.io/pkg/targets/man/tar_option_get.html'>tar_option_get</a></span>(<span class='st'>"packages"</span>),
-  library = <span class='kw'>targets</span>::<span class='fu'><a href='https://rdrr.io/pkg/targets/man/tar_option_get.html'>tar_option_get</a></span>(<span class='st'>"library"</span>),
-  iteration = <span class='kw'>targets</span>::<span class='fu'><a href='https://rdrr.io/pkg/targets/man/tar_option_get.html'>tar_option_get</a></span>(<span class='st'>"iteration"</span>),
-  error = <span class='kw'>targets</span>::<span class='fu'><a href='https://rdrr.io/pkg/targets/man/tar_option_get.html'>tar_option_get</a></span>(<span class='st'>"error"</span>),
-  memory = <span class='kw'>targets</span>::<span class='fu'><a href='https://rdrr.io/pkg/targets/man/tar_option_get.html'>tar_option_get</a></span>(<span class='st'>"memory"</span>),
-  deployment = <span class='kw'>targets</span>::<span class='fu'><a href='https://rdrr.io/pkg/targets/man/tar_option_get.html'>tar_option_get</a></span>(<span class='st'>"deployment"</span>),
-  priority = <span class='kw'>targets</span>::<span class='fu'><a href='https://rdrr.io/pkg/targets/man/tar_option_get.html'>tar_option_get</a></span>(<span class='st'>"priority"</span>),
-  resources = <span class='kw'>targets</span>::<span class='fu'><a href='https://rdrr.io/pkg/targets/man/tar_option_get.html'>tar_option_get</a></span>(<span class='st'>"resources"</span>),
-  storage = <span class='kw'>targets</span>::<span class='fu'><a href='https://rdrr.io/pkg/targets/man/tar_option_get.html'>tar_option_get</a></span>(<span class='st'>"storage"</span>),
-  retrieval = <span class='kw'>targets</span>::<span class='fu'><a href='https://rdrr.io/pkg/targets/man/tar_option_get.html'>tar_option_get</a></span>(<span class='st'>"retrieval"</span>),
-  cue = <span class='kw'>targets</span>::<span class='fu'><a href='https://rdrr.io/pkg/targets/man/tar_option_get.html'>tar_option_get</a></span>(<span class='st'>"cue"</span>)
-)
+<span class='fu'>tar_rds</span><span class='op'>(</span>
+  <span class='va'>name</span>,
+  <span class='va'>command</span>,
+  pattern <span class='op'>=</span> <span class='cn'>NULL</span>,
+  tidy_eval <span class='op'>=</span> <span class='fu'>targets</span><span class='fu'>::</span><span class='fu'><a href='https://wlandau.github.io/targets/reference/tar_option_get.html'>tar_option_get</a></span><span class='op'>(</span><span class='st'>"tidy_eval"</span><span class='op'>)</span>,
+  packages <span class='op'>=</span> <span class='fu'>targets</span><span class='fu'>::</span><span class='fu'><a href='https://wlandau.github.io/targets/reference/tar_option_get.html'>tar_option_get</a></span><span class='op'>(</span><span class='st'>"packages"</span><span class='op'>)</span>,
+  library <span class='op'>=</span> <span class='fu'>targets</span><span class='fu'>::</span><span class='fu'><a href='https://wlandau.github.io/targets/reference/tar_option_get.html'>tar_option_get</a></span><span class='op'>(</span><span class='st'>"library"</span><span class='op'>)</span>,
+  iteration <span class='op'>=</span> <span class='fu'>targets</span><span class='fu'>::</span><span class='fu'><a href='https://wlandau.github.io/targets/reference/tar_option_get.html'>tar_option_get</a></span><span class='op'>(</span><span class='st'>"iteration"</span><span class='op'>)</span>,
+  error <span class='op'>=</span> <span class='fu'>targets</span><span class='fu'>::</span><span class='fu'><a href='https://wlandau.github.io/targets/reference/tar_option_get.html'>tar_option_get</a></span><span class='op'>(</span><span class='st'>"error"</span><span class='op'>)</span>,
+  memory <span class='op'>=</span> <span class='fu'>targets</span><span class='fu'>::</span><span class='fu'><a href='https://wlandau.github.io/targets/reference/tar_option_get.html'>tar_option_get</a></span><span class='op'>(</span><span class='st'>"memory"</span><span class='op'>)</span>,
+  deployment <span class='op'>=</span> <span class='fu'>targets</span><span class='fu'>::</span><span class='fu'><a href='https://wlandau.github.io/targets/reference/tar_option_get.html'>tar_option_get</a></span><span class='op'>(</span><span class='st'>"deployment"</span><span class='op'>)</span>,
+  priority <span class='op'>=</span> <span class='fu'>targets</span><span class='fu'>::</span><span class='fu'><a href='https://wlandau.github.io/targets/reference/tar_option_get.html'>tar_option_get</a></span><span class='op'>(</span><span class='st'>"priority"</span><span class='op'>)</span>,
+  resources <span class='op'>=</span> <span class='fu'>targets</span><span class='fu'>::</span><span class='fu'><a href='https://wlandau.github.io/targets/reference/tar_option_get.html'>tar_option_get</a></span><span class='op'>(</span><span class='st'>"resources"</span><span class='op'>)</span>,
+  storage <span class='op'>=</span> <span class='fu'>targets</span><span class='fu'>::</span><span class='fu'><a href='https://wlandau.github.io/targets/reference/tar_option_get.html'>tar_option_get</a></span><span class='op'>(</span><span class='st'>"storage"</span><span class='op'>)</span>,
+  retrieval <span class='op'>=</span> <span class='fu'>targets</span><span class='fu'>::</span><span class='fu'><a href='https://wlandau.github.io/targets/reference/tar_option_get.html'>tar_option_get</a></span><span class='op'>(</span><span class='st'>"retrieval"</span><span class='op'>)</span>,
+  cue <span class='op'>=</span> <span class='fu'>targets</span><span class='fu'>::</span><span class='fu'><a href='https://wlandau.github.io/targets/reference/tar_option_get.html'>tar_option_get</a></span><span class='op'>(</span><span class='st'>"cue"</span><span class='op'>)</span>
+<span class='op'>)</span>
 
-<span class='fu'>tar_qs</span>(
-  <span class='kw'>name</span>,
-  <span class='kw'>command</span>,
-  pattern = <span class='kw'>NULL</span>,
-  tidy_eval = <span class='kw'>targets</span>::<span class='fu'><a href='https://rdrr.io/pkg/targets/man/tar_option_get.html'>tar_option_get</a></span>(<span class='st'>"tidy_eval"</span>),
-  packages = <span class='kw'>targets</span>::<span class='fu'><a href='https://rdrr.io/pkg/targets/man/tar_option_get.html'>tar_option_get</a></span>(<span class='st'>"packages"</span>),
-  library = <span class='kw'>targets</span>::<span class='fu'><a href='https://rdrr.io/pkg/targets/man/tar_option_get.html'>tar_option_get</a></span>(<span class='st'>"library"</span>),
-  iteration = <span class='kw'>targets</span>::<span class='fu'><a href='https://rdrr.io/pkg/targets/man/tar_option_get.html'>tar_option_get</a></span>(<span class='st'>"iteration"</span>),
-  error = <span class='kw'>targets</span>::<span class='fu'><a href='https://rdrr.io/pkg/targets/man/tar_option_get.html'>tar_option_get</a></span>(<span class='st'>"error"</span>),
-  memory = <span class='kw'>targets</span>::<span class='fu'><a href='https://rdrr.io/pkg/targets/man/tar_option_get.html'>tar_option_get</a></span>(<span class='st'>"memory"</span>),
-  deployment = <span class='kw'>targets</span>::<span class='fu'><a href='https://rdrr.io/pkg/targets/man/tar_option_get.html'>tar_option_get</a></span>(<span class='st'>"deployment"</span>),
-  priority = <span class='kw'>targets</span>::<span class='fu'><a href='https://rdrr.io/pkg/targets/man/tar_option_get.html'>tar_option_get</a></span>(<span class='st'>"priority"</span>),
-  resources = <span class='kw'>targets</span>::<span class='fu'><a href='https://rdrr.io/pkg/targets/man/tar_option_get.html'>tar_option_get</a></span>(<span class='st'>"resources"</span>),
-  storage = <span class='kw'>targets</span>::<span class='fu'><a href='https://rdrr.io/pkg/targets/man/tar_option_get.html'>tar_option_get</a></span>(<span class='st'>"storage"</span>),
-  retrieval = <span class='kw'>targets</span>::<span class='fu'><a href='https://rdrr.io/pkg/targets/man/tar_option_get.html'>tar_option_get</a></span>(<span class='st'>"retrieval"</span>),
-  cue = <span class='kw'>targets</span>::<span class='fu'><a href='https://rdrr.io/pkg/targets/man/tar_option_get.html'>tar_option_get</a></span>(<span class='st'>"cue"</span>)
-)
+<span class='fu'>tar_qs</span><span class='op'>(</span>
+  <span class='va'>name</span>,
+  <span class='va'>command</span>,
+  pattern <span class='op'>=</span> <span class='cn'>NULL</span>,
+  tidy_eval <span class='op'>=</span> <span class='fu'>targets</span><span class='fu'>::</span><span class='fu'><a href='https://wlandau.github.io/targets/reference/tar_option_get.html'>tar_option_get</a></span><span class='op'>(</span><span class='st'>"tidy_eval"</span><span class='op'>)</span>,
+  packages <span class='op'>=</span> <span class='fu'>targets</span><span class='fu'>::</span><span class='fu'><a href='https://wlandau.github.io/targets/reference/tar_option_get.html'>tar_option_get</a></span><span class='op'>(</span><span class='st'>"packages"</span><span class='op'>)</span>,
+  library <span class='op'>=</span> <span class='fu'>targets</span><span class='fu'>::</span><span class='fu'><a href='https://wlandau.github.io/targets/reference/tar_option_get.html'>tar_option_get</a></span><span class='op'>(</span><span class='st'>"library"</span><span class='op'>)</span>,
+  iteration <span class='op'>=</span> <span class='fu'>targets</span><span class='fu'>::</span><span class='fu'><a href='https://wlandau.github.io/targets/reference/tar_option_get.html'>tar_option_get</a></span><span class='op'>(</span><span class='st'>"iteration"</span><span class='op'>)</span>,
+  error <span class='op'>=</span> <span class='fu'>targets</span><span class='fu'>::</span><span class='fu'><a href='https://wlandau.github.io/targets/reference/tar_option_get.html'>tar_option_get</a></span><span class='op'>(</span><span class='st'>"error"</span><span class='op'>)</span>,
+  memory <span class='op'>=</span> <span class='fu'>targets</span><span class='fu'>::</span><span class='fu'><a href='https://wlandau.github.io/targets/reference/tar_option_get.html'>tar_option_get</a></span><span class='op'>(</span><span class='st'>"memory"</span><span class='op'>)</span>,
+  deployment <span class='op'>=</span> <span class='fu'>targets</span><span class='fu'>::</span><span class='fu'><a href='https://wlandau.github.io/targets/reference/tar_option_get.html'>tar_option_get</a></span><span class='op'>(</span><span class='st'>"deployment"</span><span class='op'>)</span>,
+  priority <span class='op'>=</span> <span class='fu'>targets</span><span class='fu'>::</span><span class='fu'><a href='https://wlandau.github.io/targets/reference/tar_option_get.html'>tar_option_get</a></span><span class='op'>(</span><span class='st'>"priority"</span><span class='op'>)</span>,
+  resources <span class='op'>=</span> <span class='fu'>targets</span><span class='fu'>::</span><span class='fu'><a href='https://wlandau.github.io/targets/reference/tar_option_get.html'>tar_option_get</a></span><span class='op'>(</span><span class='st'>"resources"</span><span class='op'>)</span>,
+  storage <span class='op'>=</span> <span class='fu'>targets</span><span class='fu'>::</span><span class='fu'><a href='https://wlandau.github.io/targets/reference/tar_option_get.html'>tar_option_get</a></span><span class='op'>(</span><span class='st'>"storage"</span><span class='op'>)</span>,
+  retrieval <span class='op'>=</span> <span class='fu'>targets</span><span class='fu'>::</span><span class='fu'><a href='https://wlandau.github.io/targets/reference/tar_option_get.html'>tar_option_get</a></span><span class='op'>(</span><span class='st'>"retrieval"</span><span class='op'>)</span>,
+  cue <span class='op'>=</span> <span class='fu'>targets</span><span class='fu'>::</span><span class='fu'><a href='https://wlandau.github.io/targets/reference/tar_option_get.html'>tar_option_get</a></span><span class='op'>(</span><span class='st'>"cue"</span><span class='op'>)</span>
+<span class='op'>)</span>
 
-<span class='fu'>tar_fst</span>(
-  <span class='kw'>name</span>,
-  <span class='kw'>command</span>,
-  pattern = <span class='kw'>NULL</span>,
-  tidy_eval = <span class='kw'>targets</span>::<span class='fu'><a href='https://rdrr.io/pkg/targets/man/tar_option_get.html'>tar_option_get</a></span>(<span class='st'>"tidy_eval"</span>),
-  packages = <span class='kw'>targets</span>::<span class='fu'><a href='https://rdrr.io/pkg/targets/man/tar_option_get.html'>tar_option_get</a></span>(<span class='st'>"packages"</span>),
-  library = <span class='kw'>targets</span>::<span class='fu'><a href='https://rdrr.io/pkg/targets/man/tar_option_get.html'>tar_option_get</a></span>(<span class='st'>"library"</span>),
-  iteration = <span class='kw'>targets</span>::<span class='fu'><a href='https://rdrr.io/pkg/targets/man/tar_option_get.html'>tar_option_get</a></span>(<span class='st'>"iteration"</span>),
-  error = <span class='kw'>targets</span>::<span class='fu'><a href='https://rdrr.io/pkg/targets/man/tar_option_get.html'>tar_option_get</a></span>(<span class='st'>"error"</span>),
-  memory = <span class='kw'>targets</span>::<span class='fu'><a href='https://rdrr.io/pkg/targets/man/tar_option_get.html'>tar_option_get</a></span>(<span class='st'>"memory"</span>),
-  deployment = <span class='kw'>targets</span>::<span class='fu'><a href='https://rdrr.io/pkg/targets/man/tar_option_get.html'>tar_option_get</a></span>(<span class='st'>"deployment"</span>),
-  priority = <span class='kw'>targets</span>::<span class='fu'><a href='https://rdrr.io/pkg/targets/man/tar_option_get.html'>tar_option_get</a></span>(<span class='st'>"priority"</span>),
-  resources = <span class='kw'>targets</span>::<span class='fu'><a href='https://rdrr.io/pkg/targets/man/tar_option_get.html'>tar_option_get</a></span>(<span class='st'>"resources"</span>),
-  storage = <span class='kw'>targets</span>::<span class='fu'><a href='https://rdrr.io/pkg/targets/man/tar_option_get.html'>tar_option_get</a></span>(<span class='st'>"storage"</span>),
-  retrieval = <span class='kw'>targets</span>::<span class='fu'><a href='https://rdrr.io/pkg/targets/man/tar_option_get.html'>tar_option_get</a></span>(<span class='st'>"retrieval"</span>),
-  cue = <span class='kw'>targets</span>::<span class='fu'><a href='https://rdrr.io/pkg/targets/man/tar_option_get.html'>tar_option_get</a></span>(<span class='st'>"cue"</span>)
-)
+<span class='fu'>tar_fst</span><span class='op'>(</span>
+  <span class='va'>name</span>,
+  <span class='va'>command</span>,
+  pattern <span class='op'>=</span> <span class='cn'>NULL</span>,
+  tidy_eval <span class='op'>=</span> <span class='fu'>targets</span><span class='fu'>::</span><span class='fu'><a href='https://wlandau.github.io/targets/reference/tar_option_get.html'>tar_option_get</a></span><span class='op'>(</span><span class='st'>"tidy_eval"</span><span class='op'>)</span>,
+  packages <span class='op'>=</span> <span class='fu'>targets</span><span class='fu'>::</span><span class='fu'><a href='https://wlandau.github.io/targets/reference/tar_option_get.html'>tar_option_get</a></span><span class='op'>(</span><span class='st'>"packages"</span><span class='op'>)</span>,
+  library <span class='op'>=</span> <span class='fu'>targets</span><span class='fu'>::</span><span class='fu'><a href='https://wlandau.github.io/targets/reference/tar_option_get.html'>tar_option_get</a></span><span class='op'>(</span><span class='st'>"library"</span><span class='op'>)</span>,
+  iteration <span class='op'>=</span> <span class='fu'>targets</span><span class='fu'>::</span><span class='fu'><a href='https://wlandau.github.io/targets/reference/tar_option_get.html'>tar_option_get</a></span><span class='op'>(</span><span class='st'>"iteration"</span><span class='op'>)</span>,
+  error <span class='op'>=</span> <span class='fu'>targets</span><span class='fu'>::</span><span class='fu'><a href='https://wlandau.github.io/targets/reference/tar_option_get.html'>tar_option_get</a></span><span class='op'>(</span><span class='st'>"error"</span><span class='op'>)</span>,
+  memory <span class='op'>=</span> <span class='fu'>targets</span><span class='fu'>::</span><span class='fu'><a href='https://wlandau.github.io/targets/reference/tar_option_get.html'>tar_option_get</a></span><span class='op'>(</span><span class='st'>"memory"</span><span class='op'>)</span>,
+  deployment <span class='op'>=</span> <span class='fu'>targets</span><span class='fu'>::</span><span class='fu'><a href='https://wlandau.github.io/targets/reference/tar_option_get.html'>tar_option_get</a></span><span class='op'>(</span><span class='st'>"deployment"</span><span class='op'>)</span>,
+  priority <span class='op'>=</span> <span class='fu'>targets</span><span class='fu'>::</span><span class='fu'><a href='https://wlandau.github.io/targets/reference/tar_option_get.html'>tar_option_get</a></span><span class='op'>(</span><span class='st'>"priority"</span><span class='op'>)</span>,
+  resources <span class='op'>=</span> <span class='fu'>targets</span><span class='fu'>::</span><span class='fu'><a href='https://wlandau.github.io/targets/reference/tar_option_get.html'>tar_option_get</a></span><span class='op'>(</span><span class='st'>"resources"</span><span class='op'>)</span>,
+  storage <span class='op'>=</span> <span class='fu'>targets</span><span class='fu'>::</span><span class='fu'><a href='https://wlandau.github.io/targets/reference/tar_option_get.html'>tar_option_get</a></span><span class='op'>(</span><span class='st'>"storage"</span><span class='op'>)</span>,
+  retrieval <span class='op'>=</span> <span class='fu'>targets</span><span class='fu'>::</span><span class='fu'><a href='https://wlandau.github.io/targets/reference/tar_option_get.html'>tar_option_get</a></span><span class='op'>(</span><span class='st'>"retrieval"</span><span class='op'>)</span>,
+  cue <span class='op'>=</span> <span class='fu'>targets</span><span class='fu'>::</span><span class='fu'><a href='https://wlandau.github.io/targets/reference/tar_option_get.html'>tar_option_get</a></span><span class='op'>(</span><span class='st'>"cue"</span><span class='op'>)</span>
+<span class='op'>)</span>
 
-<span class='fu'>tar_fst_dt</span>(
-  <span class='kw'>name</span>,
-  <span class='kw'>command</span>,
-  pattern = <span class='kw'>NULL</span>,
-  tidy_eval = <span class='kw'>targets</span>::<span class='fu'><a href='https://rdrr.io/pkg/targets/man/tar_option_get.html'>tar_option_get</a></span>(<span class='st'>"tidy_eval"</span>),
-  packages = <span class='kw'>targets</span>::<span class='fu'><a href='https://rdrr.io/pkg/targets/man/tar_option_get.html'>tar_option_get</a></span>(<span class='st'>"packages"</span>),
-  library = <span class='kw'>targets</span>::<span class='fu'><a href='https://rdrr.io/pkg/targets/man/tar_option_get.html'>tar_option_get</a></span>(<span class='st'>"library"</span>),
-  iteration = <span class='kw'>targets</span>::<span class='fu'><a href='https://rdrr.io/pkg/targets/man/tar_option_get.html'>tar_option_get</a></span>(<span class='st'>"iteration"</span>),
-  error = <span class='kw'>targets</span>::<span class='fu'><a href='https://rdrr.io/pkg/targets/man/tar_option_get.html'>tar_option_get</a></span>(<span class='st'>"error"</span>),
-  memory = <span class='kw'>targets</span>::<span class='fu'><a href='https://rdrr.io/pkg/targets/man/tar_option_get.html'>tar_option_get</a></span>(<span class='st'>"memory"</span>),
-  deployment = <span class='kw'>targets</span>::<span class='fu'><a href='https://rdrr.io/pkg/targets/man/tar_option_get.html'>tar_option_get</a></span>(<span class='st'>"deployment"</span>),
-  priority = <span class='kw'>targets</span>::<span class='fu'><a href='https://rdrr.io/pkg/targets/man/tar_option_get.html'>tar_option_get</a></span>(<span class='st'>"priority"</span>),
-  resources = <span class='kw'>targets</span>::<span class='fu'><a href='https://rdrr.io/pkg/targets/man/tar_option_get.html'>tar_option_get</a></span>(<span class='st'>"resources"</span>),
-  storage = <span class='kw'>targets</span>::<span class='fu'><a href='https://rdrr.io/pkg/targets/man/tar_option_get.html'>tar_option_get</a></span>(<span class='st'>"storage"</span>),
-  retrieval = <span class='kw'>targets</span>::<span class='fu'><a href='https://rdrr.io/pkg/targets/man/tar_option_get.html'>tar_option_get</a></span>(<span class='st'>"retrieval"</span>),
-  cue = <span class='kw'>targets</span>::<span class='fu'><a href='https://rdrr.io/pkg/targets/man/tar_option_get.html'>tar_option_get</a></span>(<span class='st'>"cue"</span>)
-)
+<span class='fu'>tar_fst_dt</span><span class='op'>(</span>
+  <span class='va'>name</span>,
+  <span class='va'>command</span>,
+  pattern <span class='op'>=</span> <span class='cn'>NULL</span>,
+  tidy_eval <span class='op'>=</span> <span class='fu'>targets</span><span class='fu'>::</span><span class='fu'><a href='https://wlandau.github.io/targets/reference/tar_option_get.html'>tar_option_get</a></span><span class='op'>(</span><span class='st'>"tidy_eval"</span><span class='op'>)</span>,
+  packages <span class='op'>=</span> <span class='fu'>targets</span><span class='fu'>::</span><span class='fu'><a href='https://wlandau.github.io/targets/reference/tar_option_get.html'>tar_option_get</a></span><span class='op'>(</span><span class='st'>"packages"</span><span class='op'>)</span>,
+  library <span class='op'>=</span> <span class='fu'>targets</span><span class='fu'>::</span><span class='fu'><a href='https://wlandau.github.io/targets/reference/tar_option_get.html'>tar_option_get</a></span><span class='op'>(</span><span class='st'>"library"</span><span class='op'>)</span>,
+  iteration <span class='op'>=</span> <span class='fu'>targets</span><span class='fu'>::</span><span class='fu'><a href='https://wlandau.github.io/targets/reference/tar_option_get.html'>tar_option_get</a></span><span class='op'>(</span><span class='st'>"iteration"</span><span class='op'>)</span>,
+  error <span class='op'>=</span> <span class='fu'>targets</span><span class='fu'>::</span><span class='fu'><a href='https://wlandau.github.io/targets/reference/tar_option_get.html'>tar_option_get</a></span><span class='op'>(</span><span class='st'>"error"</span><span class='op'>)</span>,
+  memory <span class='op'>=</span> <span class='fu'>targets</span><span class='fu'>::</span><span class='fu'><a href='https://wlandau.github.io/targets/reference/tar_option_get.html'>tar_option_get</a></span><span class='op'>(</span><span class='st'>"memory"</span><span class='op'>)</span>,
+  deployment <span class='op'>=</span> <span class='fu'>targets</span><span class='fu'>::</span><span class='fu'><a href='https://wlandau.github.io/targets/reference/tar_option_get.html'>tar_option_get</a></span><span class='op'>(</span><span class='st'>"deployment"</span><span class='op'>)</span>,
+  priority <span class='op'>=</span> <span class='fu'>targets</span><span class='fu'>::</span><span class='fu'><a href='https://wlandau.github.io/targets/reference/tar_option_get.html'>tar_option_get</a></span><span class='op'>(</span><span class='st'>"priority"</span><span class='op'>)</span>,
+  resources <span class='op'>=</span> <span class='fu'>targets</span><span class='fu'>::</span><span class='fu'><a href='https://wlandau.github.io/targets/reference/tar_option_get.html'>tar_option_get</a></span><span class='op'>(</span><span class='st'>"resources"</span><span class='op'>)</span>,
+  storage <span class='op'>=</span> <span class='fu'>targets</span><span class='fu'>::</span><span class='fu'><a href='https://wlandau.github.io/targets/reference/tar_option_get.html'>tar_option_get</a></span><span class='op'>(</span><span class='st'>"storage"</span><span class='op'>)</span>,
+  retrieval <span class='op'>=</span> <span class='fu'>targets</span><span class='fu'>::</span><span class='fu'><a href='https://wlandau.github.io/targets/reference/tar_option_get.html'>tar_option_get</a></span><span class='op'>(</span><span class='st'>"retrieval"</span><span class='op'>)</span>,
+  cue <span class='op'>=</span> <span class='fu'>targets</span><span class='fu'>::</span><span class='fu'><a href='https://wlandau.github.io/targets/reference/tar_option_get.html'>tar_option_get</a></span><span class='op'>(</span><span class='st'>"cue"</span><span class='op'>)</span>
+<span class='op'>)</span>
 
-<span class='fu'>tar_fst_tbl</span>(
-  <span class='kw'>name</span>,
-  <span class='kw'>command</span>,
-  pattern = <span class='kw'>NULL</span>,
-  tidy_eval = <span class='kw'>targets</span>::<span class='fu'><a href='https://rdrr.io/pkg/targets/man/tar_option_get.html'>tar_option_get</a></span>(<span class='st'>"tidy_eval"</span>),
-  packages = <span class='kw'>targets</span>::<span class='fu'><a href='https://rdrr.io/pkg/targets/man/tar_option_get.html'>tar_option_get</a></span>(<span class='st'>"packages"</span>),
-  library = <span class='kw'>targets</span>::<span class='fu'><a href='https://rdrr.io/pkg/targets/man/tar_option_get.html'>tar_option_get</a></span>(<span class='st'>"library"</span>),
-  iteration = <span class='kw'>targets</span>::<span class='fu'><a href='https://rdrr.io/pkg/targets/man/tar_option_get.html'>tar_option_get</a></span>(<span class='st'>"iteration"</span>),
-  error = <span class='kw'>targets</span>::<span class='fu'><a href='https://rdrr.io/pkg/targets/man/tar_option_get.html'>tar_option_get</a></span>(<span class='st'>"error"</span>),
-  memory = <span class='kw'>targets</span>::<span class='fu'><a href='https://rdrr.io/pkg/targets/man/tar_option_get.html'>tar_option_get</a></span>(<span class='st'>"memory"</span>),
-  deployment = <span class='kw'>targets</span>::<span class='fu'><a href='https://rdrr.io/pkg/targets/man/tar_option_get.html'>tar_option_get</a></span>(<span class='st'>"deployment"</span>),
-  priority = <span class='kw'>targets</span>::<span class='fu'><a href='https://rdrr.io/pkg/targets/man/tar_option_get.html'>tar_option_get</a></span>(<span class='st'>"priority"</span>),
-  resources = <span class='kw'>targets</span>::<span class='fu'><a href='https://rdrr.io/pkg/targets/man/tar_option_get.html'>tar_option_get</a></span>(<span class='st'>"resources"</span>),
-  storage = <span class='kw'>targets</span>::<span class='fu'><a href='https://rdrr.io/pkg/targets/man/tar_option_get.html'>tar_option_get</a></span>(<span class='st'>"storage"</span>),
-  retrieval = <span class='kw'>targets</span>::<span class='fu'><a href='https://rdrr.io/pkg/targets/man/tar_option_get.html'>tar_option_get</a></span>(<span class='st'>"retrieval"</span>),
-  cue = <span class='kw'>targets</span>::<span class='fu'><a href='https://rdrr.io/pkg/targets/man/tar_option_get.html'>tar_option_get</a></span>(<span class='st'>"cue"</span>)
-)
+<span class='fu'>tar_fst_tbl</span><span class='op'>(</span>
+  <span class='va'>name</span>,
+  <span class='va'>command</span>,
+  pattern <span class='op'>=</span> <span class='cn'>NULL</span>,
+  tidy_eval <span class='op'>=</span> <span class='fu'>targets</span><span class='fu'>::</span><span class='fu'><a href='https://wlandau.github.io/targets/reference/tar_option_get.html'>tar_option_get</a></span><span class='op'>(</span><span class='st'>"tidy_eval"</span><span class='op'>)</span>,
+  packages <span class='op'>=</span> <span class='fu'>targets</span><span class='fu'>::</span><span class='fu'><a href='https://wlandau.github.io/targets/reference/tar_option_get.html'>tar_option_get</a></span><span class='op'>(</span><span class='st'>"packages"</span><span class='op'>)</span>,
+  library <span class='op'>=</span> <span class='fu'>targets</span><span class='fu'>::</span><span class='fu'><a href='https://wlandau.github.io/targets/reference/tar_option_get.html'>tar_option_get</a></span><span class='op'>(</span><span class='st'>"library"</span><span class='op'>)</span>,
+  iteration <span class='op'>=</span> <span class='fu'>targets</span><span class='fu'>::</span><span class='fu'><a href='https://wlandau.github.io/targets/reference/tar_option_get.html'>tar_option_get</a></span><span class='op'>(</span><span class='st'>"iteration"</span><span class='op'>)</span>,
+  error <span class='op'>=</span> <span class='fu'>targets</span><span class='fu'>::</span><span class='fu'><a href='https://wlandau.github.io/targets/reference/tar_option_get.html'>tar_option_get</a></span><span class='op'>(</span><span class='st'>"error"</span><span class='op'>)</span>,
+  memory <span class='op'>=</span> <span class='fu'>targets</span><span class='fu'>::</span><span class='fu'><a href='https://wlandau.github.io/targets/reference/tar_option_get.html'>tar_option_get</a></span><span class='op'>(</span><span class='st'>"memory"</span><span class='op'>)</span>,
+  deployment <span class='op'>=</span> <span class='fu'>targets</span><span class='fu'>::</span><span class='fu'><a href='https://wlandau.github.io/targets/reference/tar_option_get.html'>tar_option_get</a></span><span class='op'>(</span><span class='st'>"deployment"</span><span class='op'>)</span>,
+  priority <span class='op'>=</span> <span class='fu'>targets</span><span class='fu'>::</span><span class='fu'><a href='https://wlandau.github.io/targets/reference/tar_option_get.html'>tar_option_get</a></span><span class='op'>(</span><span class='st'>"priority"</span><span class='op'>)</span>,
+  resources <span class='op'>=</span> <span class='fu'>targets</span><span class='fu'>::</span><span class='fu'><a href='https://wlandau.github.io/targets/reference/tar_option_get.html'>tar_option_get</a></span><span class='op'>(</span><span class='st'>"resources"</span><span class='op'>)</span>,
+  storage <span class='op'>=</span> <span class='fu'>targets</span><span class='fu'>::</span><span class='fu'><a href='https://wlandau.github.io/targets/reference/tar_option_get.html'>tar_option_get</a></span><span class='op'>(</span><span class='st'>"storage"</span><span class='op'>)</span>,
+  retrieval <span class='op'>=</span> <span class='fu'>targets</span><span class='fu'>::</span><span class='fu'><a href='https://wlandau.github.io/targets/reference/tar_option_get.html'>tar_option_get</a></span><span class='op'>(</span><span class='st'>"retrieval"</span><span class='op'>)</span>,
+  cue <span class='op'>=</span> <span class='fu'>targets</span><span class='fu'>::</span><span class='fu'><a href='https://wlandau.github.io/targets/reference/tar_option_get.html'>tar_option_get</a></span><span class='op'>(</span><span class='st'>"cue"</span><span class='op'>)</span>
+<span class='op'>)</span>
 
-<span class='fu'>tar_keras</span>(
-  <span class='kw'>name</span>,
-  <span class='kw'>command</span>,
-  pattern = <span class='kw'>NULL</span>,
-  tidy_eval = <span class='kw'>targets</span>::<span class='fu'><a href='https://rdrr.io/pkg/targets/man/tar_option_get.html'>tar_option_get</a></span>(<span class='st'>"tidy_eval"</span>),
-  packages = <span class='kw'>targets</span>::<span class='fu'><a href='https://rdrr.io/pkg/targets/man/tar_option_get.html'>tar_option_get</a></span>(<span class='st'>"packages"</span>),
-  library = <span class='kw'>targets</span>::<span class='fu'><a href='https://rdrr.io/pkg/targets/man/tar_option_get.html'>tar_option_get</a></span>(<span class='st'>"library"</span>),
-  iteration = <span class='kw'>targets</span>::<span class='fu'><a href='https://rdrr.io/pkg/targets/man/tar_option_get.html'>tar_option_get</a></span>(<span class='st'>"iteration"</span>),
-  error = <span class='kw'>targets</span>::<span class='fu'><a href='https://rdrr.io/pkg/targets/man/tar_option_get.html'>tar_option_get</a></span>(<span class='st'>"error"</span>),
-  memory = <span class='kw'>targets</span>::<span class='fu'><a href='https://rdrr.io/pkg/targets/man/tar_option_get.html'>tar_option_get</a></span>(<span class='st'>"memory"</span>),
-  deployment = <span class='kw'>targets</span>::<span class='fu'><a href='https://rdrr.io/pkg/targets/man/tar_option_get.html'>tar_option_get</a></span>(<span class='st'>"deployment"</span>),
-  priority = <span class='kw'>targets</span>::<span class='fu'><a href='https://rdrr.io/pkg/targets/man/tar_option_get.html'>tar_option_get</a></span>(<span class='st'>"priority"</span>),
-  resources = <span class='kw'>targets</span>::<span class='fu'><a href='https://rdrr.io/pkg/targets/man/tar_option_get.html'>tar_option_get</a></span>(<span class='st'>"resources"</span>),
-  storage = <span class='kw'>targets</span>::<span class='fu'><a href='https://rdrr.io/pkg/targets/man/tar_option_get.html'>tar_option_get</a></span>(<span class='st'>"storage"</span>),
-  retrieval = <span class='kw'>targets</span>::<span class='fu'><a href='https://rdrr.io/pkg/targets/man/tar_option_get.html'>tar_option_get</a></span>(<span class='st'>"retrieval"</span>),
-  cue = <span class='kw'>targets</span>::<span class='fu'><a href='https://rdrr.io/pkg/targets/man/tar_option_get.html'>tar_option_get</a></span>(<span class='st'>"cue"</span>)
-)</pre>
+<span class='fu'>tar_keras</span><span class='op'>(</span>
+  <span class='va'>name</span>,
+  <span class='va'>command</span>,
+  pattern <span class='op'>=</span> <span class='cn'>NULL</span>,
+  tidy_eval <span class='op'>=</span> <span class='fu'>targets</span><span class='fu'>::</span><span class='fu'><a href='https://wlandau.github.io/targets/reference/tar_option_get.html'>tar_option_get</a></span><span class='op'>(</span><span class='st'>"tidy_eval"</span><span class='op'>)</span>,
+  packages <span class='op'>=</span> <span class='fu'>targets</span><span class='fu'>::</span><span class='fu'><a href='https://wlandau.github.io/targets/reference/tar_option_get.html'>tar_option_get</a></span><span class='op'>(</span><span class='st'>"packages"</span><span class='op'>)</span>,
+  library <span class='op'>=</span> <span class='fu'>targets</span><span class='fu'>::</span><span class='fu'><a href='https://wlandau.github.io/targets/reference/tar_option_get.html'>tar_option_get</a></span><span class='op'>(</span><span class='st'>"library"</span><span class='op'>)</span>,
+  iteration <span class='op'>=</span> <span class='fu'>targets</span><span class='fu'>::</span><span class='fu'><a href='https://wlandau.github.io/targets/reference/tar_option_get.html'>tar_option_get</a></span><span class='op'>(</span><span class='st'>"iteration"</span><span class='op'>)</span>,
+  error <span class='op'>=</span> <span class='fu'>targets</span><span class='fu'>::</span><span class='fu'><a href='https://wlandau.github.io/targets/reference/tar_option_get.html'>tar_option_get</a></span><span class='op'>(</span><span class='st'>"error"</span><span class='op'>)</span>,
+  memory <span class='op'>=</span> <span class='fu'>targets</span><span class='fu'>::</span><span class='fu'><a href='https://wlandau.github.io/targets/reference/tar_option_get.html'>tar_option_get</a></span><span class='op'>(</span><span class='st'>"memory"</span><span class='op'>)</span>,
+  deployment <span class='op'>=</span> <span class='fu'>targets</span><span class='fu'>::</span><span class='fu'><a href='https://wlandau.github.io/targets/reference/tar_option_get.html'>tar_option_get</a></span><span class='op'>(</span><span class='st'>"deployment"</span><span class='op'>)</span>,
+  priority <span class='op'>=</span> <span class='fu'>targets</span><span class='fu'>::</span><span class='fu'><a href='https://wlandau.github.io/targets/reference/tar_option_get.html'>tar_option_get</a></span><span class='op'>(</span><span class='st'>"priority"</span><span class='op'>)</span>,
+  resources <span class='op'>=</span> <span class='fu'>targets</span><span class='fu'>::</span><span class='fu'><a href='https://wlandau.github.io/targets/reference/tar_option_get.html'>tar_option_get</a></span><span class='op'>(</span><span class='st'>"resources"</span><span class='op'>)</span>,
+  storage <span class='op'>=</span> <span class='fu'>targets</span><span class='fu'>::</span><span class='fu'><a href='https://wlandau.github.io/targets/reference/tar_option_get.html'>tar_option_get</a></span><span class='op'>(</span><span class='st'>"storage"</span><span class='op'>)</span>,
+  retrieval <span class='op'>=</span> <span class='fu'>targets</span><span class='fu'>::</span><span class='fu'><a href='https://wlandau.github.io/targets/reference/tar_option_get.html'>tar_option_get</a></span><span class='op'>(</span><span class='st'>"retrieval"</span><span class='op'>)</span>,
+  cue <span class='op'>=</span> <span class='fu'>targets</span><span class='fu'>::</span><span class='fu'><a href='https://wlandau.github.io/targets/reference/tar_option_get.html'>tar_option_get</a></span><span class='op'>(</span><span class='st'>"cue"</span><span class='op'>)</span>
+<span class='op'>)</span></pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -264,7 +264,7 @@
       <th>pattern</th>
       <td><p>Language to define branching for a target.
 For example, in a pipeline with numeric vector targets <code>x</code> and <code>y</code>,
-<code><a href='https://rdrr.io/pkg/targets/man/tar_target.html'>tar_target(z, x + y, pattern = map(x, y))</a></code> implicitly defines
+<code><a href='https://wlandau.github.io/targets/reference/tar_target.html'>tar_target(z, x + y, pattern = map(x, y))</a></code> implicitly defines
 branches of <code>z</code> that each compute <code>x[1] + y[1]</code>, <code>x[2] + y[2]</code>,
 and so on. See the user manual for details.</p></td>
     </tr>
@@ -278,7 +278,7 @@ the values of global objects.</p></td>
     <tr>
       <th>packages</th>
       <td><p>Character vector of packages to load right before
-the target builds. Use <code><a href='https://rdrr.io/pkg/targets/man/tar_option_set.html'>tar_option_set()</a></code> to set packages
+the target builds. Use <code><a href='https://wlandau.github.io/targets/reference/tar_option_set.html'>tar_option_set()</a></code> to set packages
 globally for all subsequent targets you define.</p></td>
     </tr>
     <tr>
@@ -299,7 +299,7 @@ subsets of a data frame. The target's return value must be a data
 frame with a special <code>tar_group</code> column of consecutive integers
 from 1 through the number of groups. Each integer designates a group,
 and a branch is created for each collection of rows in a group.
-See the <code><a href='https://rdrr.io/pkg/targets/man/tar_group.html'>tar_group()</a></code> function to see how you can
+See the <code><a href='https://wlandau.github.io/targets/reference/tar_group.html'>tar_group()</a></code> function to see how you can
 create the special <code>tar_group</code> column with <code>dplyr::group_by()</code>.</p></li>
 </ul></td>
     </tr>
@@ -323,7 +323,7 @@ whenever another target needs the value.</p></td>
     <tr>
       <th>deployment</th>
       <td><p>Character of length 1, only relevant to
-<code><a href='https://rdrr.io/pkg/targets/man/tar_make_clustermq.html'>tar_make_clustermq()</a></code> and <code><a href='https://rdrr.io/pkg/targets/man/tar_make_future.html'>tar_make_future()</a></code>. If <code>"remote"</code>,
+<code><a href='https://wlandau.github.io/targets/reference/tar_make_clustermq.html'>tar_make_clustermq()</a></code> and <code><a href='https://wlandau.github.io/targets/reference/tar_make_future.html'>tar_make_future()</a></code>. If <code>"remote"</code>,
 the target builds on a remote parallel worker. If <code>"local"</code>,
 the target builds on the host machine / process managing the pipeline.</p></td>
     </tr>
@@ -336,8 +336,8 @@ simultaneously. Targets with priorities closer to 1 get built earlier.</p></td>
     <tr>
       <th>resources</th>
       <td><p>A named list of computing resources. Uses:</p><ul>
-<li><p>Template file wildcards for <code>future::future()</code> in <code><a href='https://rdrr.io/pkg/targets/man/tar_make_future.html'>tar_make_future()</a></code>.</p></li>
-<li><p>Template file wildcards <code>clustermq::workers()</code> in <code><a href='https://rdrr.io/pkg/targets/man/tar_make_clustermq.html'>tar_make_clustermq()</a></code>.</p></li>
+<li><p>Template file wildcards for <code>future::future()</code> in <code><a href='https://wlandau.github.io/targets/reference/tar_make_future.html'>tar_make_future()</a></code>.</p></li>
+<li><p>Template file wildcards <code>clustermq::workers()</code> in <code><a href='https://wlandau.github.io/targets/reference/tar_make_clustermq.html'>tar_make_clustermq()</a></code>.</p></li>
 <li><p>Custom <code>curl</code> handle if <code>format = "url"</code>,
 e.g. <code>resources = list(handle = curl::new_handle())</code>.</p></li>
 <li><p>Custom preset for <code>qs::qsave()</code> if <code>format = "qs"</code>, e.g.
@@ -350,7 +350,7 @@ e.g. <code>resources = list(handle = curl::new_handle())</code>.</p></li>
     <tr>
       <th>storage</th>
       <td><p>Character of length 1, only relevant to
-<code><a href='https://rdrr.io/pkg/targets/man/tar_make_clustermq.html'>tar_make_clustermq()</a></code> and <code><a href='https://rdrr.io/pkg/targets/man/tar_make_future.html'>tar_make_future()</a></code>.
+<code><a href='https://wlandau.github.io/targets/reference/tar_make_clustermq.html'>tar_make_clustermq()</a></code> and <code><a href='https://wlandau.github.io/targets/reference/tar_make_future.html'>tar_make_future()</a></code>.
 If <code>"local"</code>, the target's return value is sent back to the
 host machine and saved locally. If <code>"remote"</code>, the remote worker
 saves the value.</p></td>
@@ -358,41 +358,41 @@ saves the value.</p></td>
     <tr>
       <th>retrieval</th>
       <td><p>Character of length 1, only relevant to
-<code><a href='https://rdrr.io/pkg/targets/man/tar_make_clustermq.html'>tar_make_clustermq()</a></code> and <code><a href='https://rdrr.io/pkg/targets/man/tar_make_future.html'>tar_make_future()</a></code>.
+<code><a href='https://wlandau.github.io/targets/reference/tar_make_clustermq.html'>tar_make_clustermq()</a></code> and <code><a href='https://wlandau.github.io/targets/reference/tar_make_future.html'>tar_make_future()</a></code>.
 If <code>"local"</code>, the target's dependencies are loaded on the host machine
 and sent to the remote worker before the target builds.
 If <code>"remote"</code>, the remote worker loads the targets dependencies.</p></td>
     </tr>
     <tr>
       <th>cue</th>
-      <td><p>An optional object from <code><a href='https://rdrr.io/pkg/targets/man/tar_cue.html'>tar_cue()</a></code> to customize the
+      <td><p>An optional object from <code><a href='https://wlandau.github.io/targets/reference/tar_cue.html'>tar_cue()</a></code> to customize the
 rules that decide whether the target is up to date.</p></td>
     </tr>
     </table>
 
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p>A <code><a href='https://rdrr.io/pkg/targets/man/tar_target.html'>tar_target()</a></code> object.</p>
+    <p>A <code><a href='https://wlandau.github.io/targets/reference/tar_target.html'>tar_target()</a></code> object.</p>
     <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
 
     <p>These functions are shorthand for targets with specialized
 storage formats. For example, <code>tar_qs(name, fun())</code> is equivalent to
-<code><a href='https://rdrr.io/pkg/targets/man/tar_target.html'>tar_target(name, fun(), format = "qs")</a></code>.
+<code><a href='https://wlandau.github.io/targets/reference/tar_target.html'>tar_target(name, fun(), format = "qs")</a></code>.
 For details on specialized storage formats, open the help file of the
-<code><a href='https://rdrr.io/pkg/targets/man/tar_target.html'>targets::tar_target()</a></code> function and read about the <code>format</code> argument.</p>
+<code><a href='https://wlandau.github.io/targets/reference/tar_target.html'>targets::tar_target()</a></code> function and read about the <code>format</code> argument.</p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='co'>if</span> (<span class='fl'>FALSE</span>) {
-<span class='kw'>targets</span>::<span class='fu'><a href='https://rdrr.io/pkg/targets/man/tar_dir.html'>tar_dir</a></span>({
-<span class='kw'>targets</span>::<span class='fu'><a href='https://rdrr.io/pkg/targets/man/tar_script.html'>tar_script</a></span>(
-  <span class='kw'>targets</span>::<span class='fu'><a href='https://rdrr.io/pkg/targets/man/tar_pipeline.html'>tar_pipeline</a></span>(
+    <pre class="examples"><div class='input'><span class='kw'>if</span> <span class='op'>(</span><span class='cn'>FALSE</span><span class='op'>)</span> <span class='op'>{</span>
+<span class='fu'>targets</span><span class='fu'>::</span><span class='fu'><a href='https://wlandau.github.io/targets/reference/tar_dir.html'>tar_dir</a></span><span class='op'>(</span><span class='op'>{</span>
+<span class='fu'>targets</span><span class='fu'>::</span><span class='fu'><a href='https://wlandau.github.io/targets/reference/tar_script.html'>tar_script</a></span><span class='op'>(</span>
+  <span class='fu'>targets</span><span class='fu'>::</span><span class='fu'><a href='https://wlandau.github.io/targets/reference/tar_pipeline.html'>tar_pipeline</a></span><span class='op'>(</span>
     <span class='co'># equivalent to tar_target(x, 1, format = "rds"):</span>
-    <span class='kw'>tarchetypes</span>::<span class='fu'>tar_rds</span>(<span class='kw'>x</span>, <span class='fl'>1</span>)
-  )
-)
-<span class='kw'>targets</span>::<span class='fu'><a href='https://rdrr.io/pkg/targets/man/tar_make.html'>tar_make</a></span>()
-})
-}
+    <span class='fu'>tarchetypes</span><span class='fu'>::</span><span class='fu'>tar_rds</span><span class='op'>(</span><span class='va'>x</span>, <span class='fl'>1</span><span class='op'>)</span>
+  <span class='op'>)</span>
+<span class='op'>)</span>
+<span class='fu'>targets</span><span class='fu'>::</span><span class='fu'><a href='https://wlandau.github.io/targets/reference/tar_make.html'>tar_make</a></span><span class='op'>(</span><span class='op'>)</span>
+<span class='op'>}</span><span class='op'>)</span>
+<span class='op'>}</span>
 </div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">

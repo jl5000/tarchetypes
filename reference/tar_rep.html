@@ -127,25 +127,25 @@ using batches. Batches reduce the number of targets
 and thus reduce overhead.</p>
     </div>
 
-    <pre class="usage"><span class='fu'>tar_rep</span>(
-  <span class='kw'>name</span>,
-  <span class='kw'>command</span>,
-  batches = <span class='fl'>1</span>,
-  reps = <span class='fl'>1</span>,
-  tidy_eval = <span class='kw'>targets</span>::<span class='fu'><a href='https://rdrr.io/pkg/targets/man/tar_option_get.html'>tar_option_get</a></span>(<span class='st'>"tidy_eval"</span>),
-  packages = <span class='kw'>targets</span>::<span class='fu'><a href='https://rdrr.io/pkg/targets/man/tar_option_get.html'>tar_option_get</a></span>(<span class='st'>"packages"</span>),
-  library = <span class='kw'>targets</span>::<span class='fu'><a href='https://rdrr.io/pkg/targets/man/tar_option_get.html'>tar_option_get</a></span>(<span class='st'>"library"</span>),
-  format = <span class='kw'>targets</span>::<span class='fu'><a href='https://rdrr.io/pkg/targets/man/tar_option_get.html'>tar_option_get</a></span>(<span class='st'>"format"</span>),
-  iteration = <span class='kw'>targets</span>::<span class='fu'><a href='https://rdrr.io/pkg/targets/man/tar_option_get.html'>tar_option_get</a></span>(<span class='st'>"iteration"</span>),
-  error = <span class='kw'>targets</span>::<span class='fu'><a href='https://rdrr.io/pkg/targets/man/tar_option_get.html'>tar_option_get</a></span>(<span class='st'>"error"</span>),
-  memory = <span class='kw'>targets</span>::<span class='fu'><a href='https://rdrr.io/pkg/targets/man/tar_option_get.html'>tar_option_get</a></span>(<span class='st'>"memory"</span>),
-  deployment = <span class='kw'>targets</span>::<span class='fu'><a href='https://rdrr.io/pkg/targets/man/tar_option_get.html'>tar_option_get</a></span>(<span class='st'>"deployment"</span>),
-  priority = <span class='kw'>targets</span>::<span class='fu'><a href='https://rdrr.io/pkg/targets/man/tar_option_get.html'>tar_option_get</a></span>(<span class='st'>"priority"</span>),
-  resources = <span class='kw'>targets</span>::<span class='fu'><a href='https://rdrr.io/pkg/targets/man/tar_option_get.html'>tar_option_get</a></span>(<span class='st'>"resources"</span>),
-  storage = <span class='kw'>targets</span>::<span class='fu'><a href='https://rdrr.io/pkg/targets/man/tar_option_get.html'>tar_option_get</a></span>(<span class='st'>"storage"</span>),
-  retrieval = <span class='kw'>targets</span>::<span class='fu'><a href='https://rdrr.io/pkg/targets/man/tar_option_get.html'>tar_option_get</a></span>(<span class='st'>"retrieval"</span>),
-  cue = <span class='kw'>targets</span>::<span class='fu'><a href='https://rdrr.io/pkg/targets/man/tar_option_get.html'>tar_option_get</a></span>(<span class='st'>"cue"</span>)
-)</pre>
+    <pre class="usage"><span class='fu'>tar_rep</span><span class='op'>(</span>
+  <span class='va'>name</span>,
+  <span class='va'>command</span>,
+  batches <span class='op'>=</span> <span class='fl'>1</span>,
+  reps <span class='op'>=</span> <span class='fl'>1</span>,
+  tidy_eval <span class='op'>=</span> <span class='fu'>targets</span><span class='fu'>::</span><span class='fu'><a href='https://wlandau.github.io/targets/reference/tar_option_get.html'>tar_option_get</a></span><span class='op'>(</span><span class='st'>"tidy_eval"</span><span class='op'>)</span>,
+  packages <span class='op'>=</span> <span class='fu'>targets</span><span class='fu'>::</span><span class='fu'><a href='https://wlandau.github.io/targets/reference/tar_option_get.html'>tar_option_get</a></span><span class='op'>(</span><span class='st'>"packages"</span><span class='op'>)</span>,
+  library <span class='op'>=</span> <span class='fu'>targets</span><span class='fu'>::</span><span class='fu'><a href='https://wlandau.github.io/targets/reference/tar_option_get.html'>tar_option_get</a></span><span class='op'>(</span><span class='st'>"library"</span><span class='op'>)</span>,
+  format <span class='op'>=</span> <span class='fu'>targets</span><span class='fu'>::</span><span class='fu'><a href='https://wlandau.github.io/targets/reference/tar_option_get.html'>tar_option_get</a></span><span class='op'>(</span><span class='st'>"format"</span><span class='op'>)</span>,
+  iteration <span class='op'>=</span> <span class='fu'>targets</span><span class='fu'>::</span><span class='fu'><a href='https://wlandau.github.io/targets/reference/tar_option_get.html'>tar_option_get</a></span><span class='op'>(</span><span class='st'>"iteration"</span><span class='op'>)</span>,
+  error <span class='op'>=</span> <span class='fu'>targets</span><span class='fu'>::</span><span class='fu'><a href='https://wlandau.github.io/targets/reference/tar_option_get.html'>tar_option_get</a></span><span class='op'>(</span><span class='st'>"error"</span><span class='op'>)</span>,
+  memory <span class='op'>=</span> <span class='fu'>targets</span><span class='fu'>::</span><span class='fu'><a href='https://wlandau.github.io/targets/reference/tar_option_get.html'>tar_option_get</a></span><span class='op'>(</span><span class='st'>"memory"</span><span class='op'>)</span>,
+  deployment <span class='op'>=</span> <span class='fu'>targets</span><span class='fu'>::</span><span class='fu'><a href='https://wlandau.github.io/targets/reference/tar_option_get.html'>tar_option_get</a></span><span class='op'>(</span><span class='st'>"deployment"</span><span class='op'>)</span>,
+  priority <span class='op'>=</span> <span class='fu'>targets</span><span class='fu'>::</span><span class='fu'><a href='https://wlandau.github.io/targets/reference/tar_option_get.html'>tar_option_get</a></span><span class='op'>(</span><span class='st'>"priority"</span><span class='op'>)</span>,
+  resources <span class='op'>=</span> <span class='fu'>targets</span><span class='fu'>::</span><span class='fu'><a href='https://wlandau.github.io/targets/reference/tar_option_get.html'>tar_option_get</a></span><span class='op'>(</span><span class='st'>"resources"</span><span class='op'>)</span>,
+  storage <span class='op'>=</span> <span class='fu'>targets</span><span class='fu'>::</span><span class='fu'><a href='https://wlandau.github.io/targets/reference/tar_option_get.html'>tar_option_get</a></span><span class='op'>(</span><span class='st'>"storage"</span><span class='op'>)</span>,
+  retrieval <span class='op'>=</span> <span class='fu'>targets</span><span class='fu'>::</span><span class='fu'><a href='https://wlandau.github.io/targets/reference/tar_option_get.html'>tar_option_get</a></span><span class='op'>(</span><span class='st'>"retrieval"</span><span class='op'>)</span>,
+  cue <span class='op'>=</span> <span class='fu'>targets</span><span class='fu'>::</span><span class='fu'><a href='https://wlandau.github.io/targets/reference/tar_option_get.html'>tar_option_get</a></span><span class='op'>(</span><span class='st'>"cue"</span><span class='op'>)</span>
+<span class='op'>)</span></pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -164,7 +164,7 @@ and rep-within-batch IDs, respectively.</p></td>
     <tr>
       <th>batches</th>
       <td><p>Number of batches. This is also the number of dynamic
-branches created during <code><a href='https://rdrr.io/pkg/targets/man/tar_make.html'>tar_make()</a></code>.</p></td>
+branches created during <code><a href='https://wlandau.github.io/targets/reference/tar_make.html'>tar_make()</a></code>.</p></td>
     </tr>
     <tr>
       <th>reps</th>
@@ -175,12 +175,12 @@ of replications is <code>batches * reps</code>.</p></td>
       <th>tidy_eval</th>
       <td><p>Whether to invoke tidy evaluation
 (e.g. the <code>!!</code> operator from <code>rlang</code>) as soon as the target is defined
-(before <code><a href='https://rdrr.io/pkg/targets/man/tar_make.html'>tar_make()</a></code>). Applies to the <code>command</code> argument.</p></td>
+(before <code><a href='https://wlandau.github.io/targets/reference/tar_make.html'>tar_make()</a></code>). Applies to the <code>command</code> argument.</p></td>
     </tr>
     <tr>
       <th>packages</th>
       <td><p>Character vector of packages to load right before
-the target builds. Use <code><a href='https://rdrr.io/pkg/targets/man/tar_option_set.html'>tar_option_set()</a></code> to set packages
+the target builds. Use <code><a href='https://wlandau.github.io/targets/reference/tar_option_set.html'>tar_option_set()</a></code> to set packages
 globally for all subsequent targets you define.</p></td>
     </tr>
     <tr>
@@ -200,12 +200,12 @@ most objects, but slow.</p></li>
 <li><p><code>"qs"</code>: Uses <code>qs::qsave()</code> and <code>qs::qread()</code>. Should work for
 most objects, much faster than <code>"rds"</code>. Optionally set the
 preset for <code>qsave()</code> through the <code>resources</code> argument, e.g.
-<code><a href='https://rdrr.io/pkg/targets/man/tar_target.html'>tar_target(..., resources = list(preset = "archive"))</a></code>.</p></li>
+<code><a href='https://wlandau.github.io/targets/reference/tar_target.html'>tar_target(..., resources = list(preset = "archive"))</a></code>.</p></li>
 <li><p><code>"fst"</code>: Uses <code>fst::write_fst()</code> and <code>fst::read_fst()</code>.
 Much faster than <code>"rds"</code>, but the value must be
 a data frame. Optionally set the compression level for
 <code>fst::write_fst()</code> through the <code>resources</code> argument, e.g.
-<code><a href='https://rdrr.io/pkg/targets/man/tar_target.html'>tar_target(..., resources = list(compress = 100))</a></code>.</p></li>
+<code><a href='https://wlandau.github.io/targets/reference/tar_target.html'>tar_target(..., resources = list(compress = 100))</a></code>.</p></li>
 <li><p><code>"fst_dt"</code>: Same as <code>"fst"</code>, but the value is a <code>data.table</code>.
 Optionally set the compression level the same way as for <code>"fst"</code>.</p></li>
 <li><p><code>"fst_tbl"</code>: Same as <code>"fst"</code>, but the value is a <code>tibble</code>.
@@ -223,7 +223,7 @@ appropriate build decisions if those files are out of date.</p></li>
 except the return value of the target is a URL that already exists
 and serves as input data for downstream targets. Optionally
 supply a custom <code>curl</code> handle through the <code>resources</code> argument, e.g.
-<code><a href='https://rdrr.io/pkg/targets/man/tar_target.html'>tar_target(..., resources = list(handle = curl::new_handle()))</a></code>.
+<code><a href='https://wlandau.github.io/targets/reference/tar_target.html'>tar_target(..., resources = list(handle = curl::new_handle()))</a></code>.
 The data file at the URL needs to have an ETag or a Last-Modified
 time stamp, or else the target will throw an error because
 it cannot track the data. Also, use extreme caution when
@@ -240,17 +240,17 @@ of the target. Choices:</p><ul>
 <li><p><code>"vector"</code>: branching happens with <code>vectors::vec_slice()</code> and
 aggregation happens with <code><a href='https://vctrs.r-lib.org/reference/vec_c.html'>vctrs::vec_c()</a></code>.</p></li>
 <li><p><code>"list"</code>, branching happens with <code>[[]]</code> and aggregation happens with
-<code><a href='https://rdrr.io/r/base/list.html'>list()</a></code>. In the case of <code>tar_batch()</code>, <code><a href='https://rdrr.io/pkg/targets/man/tar_read.html'>tar_read(your_target)</a></code>
+<code><a href='https://rdrr.io/r/base/list.html'>list()</a></code>. In the case of <code>tar_batch()</code>, <code><a href='https://wlandau.github.io/targets/reference/tar_read.html'>tar_read(your_target)</a></code>
 will return a list of lists, where the outer list has one element per
 batch and each inner list has one element per rep within batch.
 To un-batch this nested list, call
-<code><a href='https://rdrr.io/pkg/targets/man/tar_read.html'>tar_read(your_target, recursive = FALSE)</a></code>.</p></li>
+<code><a href='https://wlandau.github.io/targets/reference/tar_read.html'>tar_read(your_target, recursive = FALSE)</a></code>.</p></li>
 <li><p><code>"group"</code>: <code>dplyr::group_by()</code>-like functionality to branch over
 subsets of a data frame. The target's return value must be a data
 frame with a special <code>tar_group</code> column of consecutive integers
 from 1 through the number of groups. Each integer designates a group,
 and a branch is created for each collection of rows in a group.
-See the <code><a href='https://rdrr.io/pkg/targets/man/tar_group.html'>tar_group()</a></code> function to see how you can
+See the <code><a href='https://wlandau.github.io/targets/reference/tar_group.html'>tar_group()</a></code> function to see how you can
 create the special <code>tar_group</code> column with <code>dplyr::group_by()</code>.</p></li>
 </ul></td>
     </tr>
@@ -274,7 +274,7 @@ whenever another target needs the value.</p></td>
     <tr>
       <th>deployment</th>
       <td><p>Character of length 1, only relevant to
-<code><a href='https://rdrr.io/pkg/targets/man/tar_make_clustermq.html'>tar_make_clustermq()</a></code> and <code><a href='https://rdrr.io/pkg/targets/man/tar_make_future.html'>tar_make_future()</a></code>. If <code>"remote"</code>,
+<code><a href='https://wlandau.github.io/targets/reference/tar_make_clustermq.html'>tar_make_clustermq()</a></code> and <code><a href='https://wlandau.github.io/targets/reference/tar_make_future.html'>tar_make_future()</a></code>. If <code>"remote"</code>,
 the target builds on a remote parallel worker. If <code>"local"</code>,
 the target builds on the host machine / process managing the pipeline.</p></td>
     </tr>
@@ -287,8 +287,8 @@ simultaneously. Targets with priorities closer to 1 get built earlier.</p></td>
     <tr>
       <th>resources</th>
       <td><p>A named list of computing resources. Uses:</p><ul>
-<li><p>Template file wildcards for <code>future::future()</code> in <code><a href='https://rdrr.io/pkg/targets/man/tar_make_future.html'>tar_make_future()</a></code>.</p></li>
-<li><p>Template file wildcards <code>clustermq::workers()</code> in <code><a href='https://rdrr.io/pkg/targets/man/tar_make_clustermq.html'>tar_make_clustermq()</a></code>.</p></li>
+<li><p>Template file wildcards for <code>future::future()</code> in <code><a href='https://wlandau.github.io/targets/reference/tar_make_future.html'>tar_make_future()</a></code>.</p></li>
+<li><p>Template file wildcards <code>clustermq::workers()</code> in <code><a href='https://wlandau.github.io/targets/reference/tar_make_clustermq.html'>tar_make_clustermq()</a></code>.</p></li>
 <li><p>Custom <code>curl</code> handle if <code>format = "url"</code>,
 e.g. <code>resources = list(handle = curl::new_handle())</code>.</p></li>
 <li><p>Custom preset for <code>qs::qsave()</code> if <code>format = "qs"</code>, e.g.
@@ -301,7 +301,7 @@ e.g. <code>resources = list(handle = curl::new_handle())</code>.</p></li>
     <tr>
       <th>storage</th>
       <td><p>Character of length 1, only relevant to
-<code><a href='https://rdrr.io/pkg/targets/man/tar_make_clustermq.html'>tar_make_clustermq()</a></code> and <code><a href='https://rdrr.io/pkg/targets/man/tar_make_future.html'>tar_make_future()</a></code>.
+<code><a href='https://wlandau.github.io/targets/reference/tar_make_clustermq.html'>tar_make_clustermq()</a></code> and <code><a href='https://wlandau.github.io/targets/reference/tar_make_future.html'>tar_make_future()</a></code>.
 If <code>"local"</code>, the target's return value is sent back to the
 host machine and saved locally. If <code>"remote"</code>, the remote worker
 saves the value.</p></td>
@@ -309,14 +309,14 @@ saves the value.</p></td>
     <tr>
       <th>retrieval</th>
       <td><p>Character of length 1, only relevant to
-<code><a href='https://rdrr.io/pkg/targets/man/tar_make_clustermq.html'>tar_make_clustermq()</a></code> and <code><a href='https://rdrr.io/pkg/targets/man/tar_make_future.html'>tar_make_future()</a></code>.
+<code><a href='https://wlandau.github.io/targets/reference/tar_make_clustermq.html'>tar_make_clustermq()</a></code> and <code><a href='https://wlandau.github.io/targets/reference/tar_make_future.html'>tar_make_future()</a></code>.
 If <code>"local"</code>, the target's dependencies are loaded on the host machine
 and sent to the remote worker before the target builds.
 If <code>"remote"</code>, the remote worker loads the targets dependencies.</p></td>
     </tr>
     <tr>
       <th>cue</th>
-      <td><p>An optional object from <code><a href='https://rdrr.io/pkg/targets/man/tar_cue.html'>tar_cue()</a></code> to customize the
+      <td><p>An optional object from <code><a href='https://wlandau.github.io/targets/reference/tar_cue.html'>tar_cue()</a></code> to customize the
 rules that decide whether the target is up to date.</p></td>
     </tr>
     </table>
@@ -330,11 +330,11 @@ to run the command multiple times. The command must return
 a list or data frame because <code>tar_rep()</code> will try to append
 new elements/columns <code>tar_batch</code> and <code>tar_rep</code> to the output
 to denote the batch and rep-within-batch IDs, respectively.</p>
-<p><code><a href='https://rdrr.io/pkg/targets/man/tar_read.html'>tar_read(your_target)</a></code> (on the downstream target with the actual work)
+<p><code><a href='https://wlandau.github.io/targets/reference/tar_read.html'>tar_read(your_target)</a></code> (on the downstream target with the actual work)
 will return a list of lists, where the outer list has one element per
 batch and each inner list has one element per rep within batch.
 To un-batch this nested list, call
-<code><a href='https://rdrr.io/pkg/targets/man/tar_read.html'>tar_read(your_target, recursive = FALSE)</a></code>.</p>
+<code><a href='https://wlandau.github.io/targets/reference/tar_read.html'>tar_read(your_target, recursive = FALSE)</a></code>.</p>
     <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
 
     <p><code>tar_rep()</code> and <code><a href='tar_rep_raw.html'>tar_rep_raw()</a></code> each create two targets:
@@ -353,20 +353,20 @@ are aggregated with <code><a href='https://rdrr.io/r/base/list.html'>list()</a><
 then <code><a href='https://vctrs.r-lib.org/reference/vec_c.html'>vctrs::vec_c()</a></code>. If <code>"group"</code>, then <code><a href='https://vctrs.r-lib.org/reference/vec_bind.html'>vctrs::vec_rbind()</a></code>.</p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='kw'>targets</span>::<span class='fu'><a href='https://rdrr.io/pkg/targets/man/tar_dir.html'>tar_dir</a></span>({
-<span class='kw'>targets</span>::<span class='fu'><a href='https://rdrr.io/pkg/targets/man/tar_script.html'>tar_script</a></span>({
-  <span class='kw'>targets</span>::<span class='fu'><a href='https://rdrr.io/pkg/targets/man/tar_pipeline.html'>tar_pipeline</a></span>(
-    <span class='kw'>tarchetypes</span>::<span class='fu'>tar_rep</span>(
-      <span class='kw'>x</span>,
-      <span class='fu'><a href='https://rdrr.io/r/base/data.frame.html'>data.frame</a></span>(x = <span class='fu'><a href='https://rdrr.io/r/base/sample.html'>sample.int</a></span>(<span class='fl'>1e4</span>, <span class='fl'>2</span>)),
-      batches = <span class='fl'>2</span>,
-      reps = <span class='fl'>3</span>
-    )
-  )
-})
-<span class='kw'>targets</span>::<span class='fu'><a href='https://rdrr.io/pkg/targets/man/tar_make.html'>tar_make</a></span>(callr_function = <span class='kw'>NULL</span>)
-<span class='kw'>targets</span>::<span class='fu'><a href='https://rdrr.io/pkg/targets/man/tar_read.html'>tar_read</a></span>(<span class='kw'>x</span>)
-})
+    <pre class="examples"><div class='input'><span class='fu'>targets</span><span class='fu'>::</span><span class='fu'><a href='https://wlandau.github.io/targets/reference/tar_dir.html'>tar_dir</a></span><span class='op'>(</span><span class='op'>{</span>
+<span class='fu'>targets</span><span class='fu'>::</span><span class='fu'><a href='https://wlandau.github.io/targets/reference/tar_script.html'>tar_script</a></span><span class='op'>(</span><span class='op'>{</span>
+  <span class='fu'>targets</span><span class='fu'>::</span><span class='fu'><a href='https://wlandau.github.io/targets/reference/tar_pipeline.html'>tar_pipeline</a></span><span class='op'>(</span>
+    <span class='fu'>tarchetypes</span><span class='fu'>::</span><span class='fu'>tar_rep</span><span class='op'>(</span>
+      <span class='va'>x</span>,
+      <span class='fu'><a href='https://rdrr.io/r/base/data.frame.html'>data.frame</a></span><span class='op'>(</span>x <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/sample.html'>sample.int</a></span><span class='op'>(</span><span class='fl'>1e4</span>, <span class='fl'>2</span><span class='op'>)</span><span class='op'>)</span>,
+      batches <span class='op'>=</span> <span class='fl'>2</span>,
+      reps <span class='op'>=</span> <span class='fl'>3</span>
+    <span class='op'>)</span>
+  <span class='op'>)</span>
+<span class='op'>}</span><span class='op'>)</span>
+<span class='fu'>targets</span><span class='fu'>::</span><span class='fu'><a href='https://wlandau.github.io/targets/reference/tar_make.html'>tar_make</a></span><span class='op'>(</span>callr_function <span class='op'>=</span> <span class='cn'>NULL</span><span class='op'>)</span>
+<span class='fu'>targets</span><span class='fu'>::</span><span class='fu'><a href='https://wlandau.github.io/targets/reference/tar_read.html'>tar_read</a></span><span class='op'>(</span><span class='va'>x</span><span class='op'>)</span>
+<span class='op'>}</span><span class='op'>)</span>
 </div><div class='output co'>#&gt; <span class='message'><span style='color: #0000BB;'>●</span><span> run target x_batch</span></div><div class='output co'>#&gt; <span class='message'></span><span style='color: #0000BB;'>●</span><span> run branch x_c1cb9e8a</span></div><div class='output co'>#&gt; <span class='message'></span><span style='color: #0000BB;'>●</span><span> run branch x_be02823c</span></div><div class='output co'>#&gt;       x tar_batch tar_rep
 #&gt; 1  7483         1       1
 #&gt; 2  9719         1       1

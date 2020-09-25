@@ -125,20 +125,20 @@ targets pipeline." />
 <code>targets</code> pipeline.</p>
     </div>
 
-    <pre class="usage"><span class='fu'>tar_knit</span>(
-  <span class='kw'>name</span>,
-  <span class='kw'>path</span>,
-  packages = (<span class='fu'><a href='https://rdrr.io/r/base/zpackages.html'>.packages</a></span>()),
-  library = <span class='kw'>NULL</span>,
-  error = <span class='kw'>targets</span>::<span class='fu'><a href='https://rdrr.io/pkg/targets/man/tar_option_get.html'>tar_option_get</a></span>(<span class='st'>"error"</span>),
-  deployment = <span class='st'>"local"</span>,
-  priority = <span class='kw'>targets</span>::<span class='fu'><a href='https://rdrr.io/pkg/targets/man/tar_option_get.html'>tar_option_get</a></span>(<span class='st'>"priority"</span>),
-  resources = <span class='kw'>targets</span>::<span class='fu'><a href='https://rdrr.io/pkg/targets/man/tar_option_get.html'>tar_option_get</a></span>(<span class='st'>"resources"</span>),
-  retrieval = <span class='kw'>targets</span>::<span class='fu'><a href='https://rdrr.io/pkg/targets/man/tar_option_get.html'>tar_option_get</a></span>(<span class='st'>"retrieval"</span>),
-  cue = <span class='kw'>targets</span>::<span class='fu'><a href='https://rdrr.io/pkg/targets/man/tar_option_get.html'>tar_option_get</a></span>(<span class='st'>"cue"</span>),
-  quiet = <span class='fl'>TRUE</span>,
-  <span class='kw'>...</span>
-)</pre>
+    <pre class="usage"><span class='fu'>tar_knit</span><span class='op'>(</span>
+  <span class='va'>name</span>,
+  <span class='va'>path</span>,
+  packages <span class='op'>=</span> <span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/zpackages.html'>.packages</a></span><span class='op'>(</span><span class='op'>)</span><span class='op'>)</span>,
+  library <span class='op'>=</span> <span class='cn'>NULL</span>,
+  error <span class='op'>=</span> <span class='fu'>targets</span><span class='fu'>::</span><span class='fu'><a href='https://wlandau.github.io/targets/reference/tar_option_get.html'>tar_option_get</a></span><span class='op'>(</span><span class='st'>"error"</span><span class='op'>)</span>,
+  deployment <span class='op'>=</span> <span class='st'>"local"</span>,
+  priority <span class='op'>=</span> <span class='fu'>targets</span><span class='fu'>::</span><span class='fu'><a href='https://wlandau.github.io/targets/reference/tar_option_get.html'>tar_option_get</a></span><span class='op'>(</span><span class='st'>"priority"</span><span class='op'>)</span>,
+  resources <span class='op'>=</span> <span class='fu'>targets</span><span class='fu'>::</span><span class='fu'><a href='https://wlandau.github.io/targets/reference/tar_option_get.html'>tar_option_get</a></span><span class='op'>(</span><span class='st'>"resources"</span><span class='op'>)</span>,
+  retrieval <span class='op'>=</span> <span class='fu'>targets</span><span class='fu'>::</span><span class='fu'><a href='https://wlandau.github.io/targets/reference/tar_option_get.html'>tar_option_get</a></span><span class='op'>(</span><span class='st'>"retrieval"</span><span class='op'>)</span>,
+  cue <span class='op'>=</span> <span class='fu'>targets</span><span class='fu'>::</span><span class='fu'><a href='https://wlandau.github.io/targets/reference/tar_option_get.html'>tar_option_get</a></span><span class='op'>(</span><span class='st'>"cue"</span><span class='op'>)</span>,
+  quiet <span class='op'>=</span> <span class='cn'>TRUE</span>,
+  <span class='va'>...</span>
+<span class='op'>)</span></pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -155,7 +155,7 @@ Must have length 1.</p></td>
     <tr>
       <th>packages</th>
       <td><p>Character vector of packages to load right before
-the target builds. Use <code><a href='https://rdrr.io/pkg/targets/man/tar_option_set.html'>tar_option_set()</a></code> to set packages
+the target builds. Use <code><a href='https://wlandau.github.io/targets/reference/tar_option_set.html'>tar_option_set()</a></code> to set packages
 globally for all subsequent targets you define.</p></td>
     </tr>
     <tr>
@@ -173,7 +173,7 @@ but the pipeline keeps going.</p></td>
     <tr>
       <th>deployment</th>
       <td><p>Character of length 1, only relevant to
-<code><a href='https://rdrr.io/pkg/targets/man/tar_make_clustermq.html'>tar_make_clustermq()</a></code> and <code><a href='https://rdrr.io/pkg/targets/man/tar_make_future.html'>tar_make_future()</a></code>. If <code>"remote"</code>,
+<code><a href='https://wlandau.github.io/targets/reference/tar_make_clustermq.html'>tar_make_clustermq()</a></code> and <code><a href='https://wlandau.github.io/targets/reference/tar_make_future.html'>tar_make_future()</a></code>. If <code>"remote"</code>,
 the target builds on a remote parallel worker. If <code>"local"</code>,
 the target builds on the host machine / process managing the pipeline.</p></td>
     </tr>
@@ -186,8 +186,8 @@ simultaneously. Targets with priorities closer to 1 get built earlier.</p></td>
     <tr>
       <th>resources</th>
       <td><p>A named list of computing resources. Uses:</p><ul>
-<li><p>Template file wildcards for <code>future::future()</code> in <code><a href='https://rdrr.io/pkg/targets/man/tar_make_future.html'>tar_make_future()</a></code>.</p></li>
-<li><p>Template file wildcards <code>clustermq::workers()</code> in <code><a href='https://rdrr.io/pkg/targets/man/tar_make_clustermq.html'>tar_make_clustermq()</a></code>.</p></li>
+<li><p>Template file wildcards for <code>future::future()</code> in <code><a href='https://wlandau.github.io/targets/reference/tar_make_future.html'>tar_make_future()</a></code>.</p></li>
+<li><p>Template file wildcards <code>clustermq::workers()</code> in <code><a href='https://wlandau.github.io/targets/reference/tar_make_clustermq.html'>tar_make_clustermq()</a></code>.</p></li>
 <li><p>Custom <code>curl</code> handle if <code>format = "url"</code>,
 e.g. <code>resources = list(handle = curl::new_handle())</code>.</p></li>
 <li><p>Custom preset for <code>qs::qsave()</code> if <code>format = "qs"</code>, e.g.
@@ -200,14 +200,14 @@ e.g. <code>resources = list(handle = curl::new_handle())</code>.</p></li>
     <tr>
       <th>retrieval</th>
       <td><p>Character of length 1, only relevant to
-<code><a href='https://rdrr.io/pkg/targets/man/tar_make_clustermq.html'>tar_make_clustermq()</a></code> and <code><a href='https://rdrr.io/pkg/targets/man/tar_make_future.html'>tar_make_future()</a></code>.
+<code><a href='https://wlandau.github.io/targets/reference/tar_make_clustermq.html'>tar_make_clustermq()</a></code> and <code><a href='https://wlandau.github.io/targets/reference/tar_make_future.html'>tar_make_future()</a></code>.
 If <code>"local"</code>, the target's dependencies are loaded on the host machine
 and sent to the remote worker before the target builds.
 If <code>"remote"</code>, the remote worker loads the targets dependencies.</p></td>
     </tr>
     <tr>
       <th>cue</th>
-      <td><p>An optional object from <code><a href='https://rdrr.io/pkg/targets/man/tar_cue.html'>tar_cue()</a></code> to customize the
+      <td><p>An optional object from <code><a href='https://wlandau.github.io/targets/reference/tar_cue.html'>tar_cue()</a></code> to customize the
 rules that decide whether the target is up to date.</p></td>
     </tr>
     <tr>
@@ -222,7 +222,7 @@ rules that decide whether the target is up to date.</p></td>
 
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p>A <code><a href='https://rdrr.io/pkg/targets/man/tar_target.html'>tar_target()</a></code> object with <code>format = "file"</code>.
+    <p>A <code><a href='https://wlandau.github.io/targets/reference/tar_target.html'>tar_target()</a></code> object with <code>format = "file"</code>.
 When this target runs, it returns a character vector
 of file paths. The first file paths are the output files
 (returned by <code><a href='https://rdrr.io/pkg/knitr/man/knit.html'>knitr::knit()</a></code>) and the <code>knitr</code>
@@ -232,18 +232,18 @@ all returned paths are <em>relative</em> paths to ensure portability
 without invalidating the target).</p>
     <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
 
-    <p><code>tar_knit()</code> is an alternative to <code><a href='https://rdrr.io/pkg/targets/man/tar_target.html'>tar_target()</a></code> for
+    <p><code>tar_knit()</code> is an alternative to <code><a href='https://wlandau.github.io/targets/reference/tar_target.html'>tar_target()</a></code> for
 <code>knitr</code> reports that depend on other targets. The <code>knitr</code> source
-should mention dependency targets with <code><a href='https://rdrr.io/pkg/targets/man/tar_load.html'>tar_load()</a></code> and <code><a href='https://rdrr.io/pkg/targets/man/tar_read.html'>tar_read()</a></code>
+should mention dependency targets with <code><a href='https://wlandau.github.io/targets/reference/tar_load.html'>tar_load()</a></code> and <code><a href='https://wlandau.github.io/targets/reference/tar_read.html'>tar_read()</a></code>
 in the active code chunks (which also allows you to knit the report
 outside the pipeline if the <code>_targets/</code> data store already exists).
-(Do not use <code><a href='https://rdrr.io/pkg/targets/man/tar_load_raw.html'>tar_load_raw()</a></code> or <code><a href='https://rdrr.io/pkg/targets/man/tar_read_raw.html'>tar_read_raw()</a></code> for this.)
+(Do not use <code><a href='https://wlandau.github.io/targets/reference/tar_load_raw.html'>tar_load_raw()</a></code> or <code><a href='https://wlandau.github.io/targets/reference/tar_read_raw.html'>tar_read_raw()</a></code> for this.)
 Then, <code>tar_knit()</code> defines a special kind of target. It
-1. Finds all the <code><a href='https://rdrr.io/pkg/targets/man/tar_load.html'>tar_load()</a></code>/<code><a href='https://rdrr.io/pkg/targets/man/tar_read.html'>tar_read()</a></code> dependencies in the report
+1. Finds all the <code><a href='https://wlandau.github.io/targets/reference/tar_load.html'>tar_load()</a></code>/<code><a href='https://wlandau.github.io/targets/reference/tar_read.html'>tar_read()</a></code> dependencies in the report
 and inserts them into the target's command.
 This enforces the proper dependency relationships.
-(Do not use <code><a href='https://rdrr.io/pkg/targets/man/tar_load_raw.html'>tar_load_raw()</a></code> or <code><a href='https://rdrr.io/pkg/targets/man/tar_read_raw.html'>tar_read_raw()</a></code> for this.)
-2. Sets <code>format = "file"</code> (see <code><a href='https://rdrr.io/pkg/targets/man/tar_target.html'>tar_target()</a></code>) so <code>targets</code>
+(Do not use <code><a href='https://wlandau.github.io/targets/reference/tar_load_raw.html'>tar_load_raw()</a></code> or <code><a href='https://wlandau.github.io/targets/reference/tar_read_raw.html'>tar_read_raw()</a></code> for this.)
+2. Sets <code>format = "file"</code> (see <code><a href='https://wlandau.github.io/targets/reference/tar_target.html'>tar_target()</a></code>) so <code>targets</code>
 watches the files at the returned paths and reruns the report
 if those files change.
 3. Configures the target's command to return both the output
@@ -255,9 +255,9 @@ instead of the working directory of the report.
 in the target and <code>quiet = TRUE</code> in <code><a href='https://rdrr.io/pkg/knitr/man/knit.html'>knitr::knit()</a></code>.</p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='co'>if</span> (<span class='fl'>FALSE</span>) {
-<span class='kw'>targets</span>::<span class='fu'><a href='https://rdrr.io/pkg/targets/man/tar_dir.html'>tar_dir</a></span>({
-<span class='kw'>lines</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(
+    <pre class="examples"><div class='input'><span class='kw'>if</span> <span class='op'>(</span><span class='cn'>FALSE</span><span class='op'>)</span> <span class='op'>{</span>
+<span class='fu'>targets</span><span class='fu'>::</span><span class='fu'><a href='https://wlandau.github.io/targets/reference/tar_dir.html'>tar_dir</a></span><span class='op'>(</span><span class='op'>{</span>
+<span class='va'>lines</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span>
   <span class='st'>"---"</span>,
   <span class='st'>"title: report"</span>,
   <span class='st'>"output_format: html_document"</span>,
@@ -266,18 +266,18 @@ in the target and <code>quiet = TRUE</code> in <code><a href='https://rdrr.io/pk
   <span class='st'>"```{r}"</span>,
   <span class='st'>"targets::tar_read(data)"</span>,
   <span class='st'>"```"</span>
-)
-<span class='fu'><a href='https://rdrr.io/r/base/writeLines.html'>writeLines</a></span>(<span class='kw'>lines</span>, <span class='st'>"report.Rmd"</span>)
-<span class='kw'>targets</span>::<span class='fu'><a href='https://rdrr.io/pkg/targets/man/tar_script.html'>tar_script</a></span>({
-  <span class='fu'><a href='https://rdrr.io/r/base/library.html'>library</a></span>(<span class='kw'><a href='https://wlandau.github.io/tarchetypes'>tarchetypes</a></span>)
-  <span class='fu'><a href='https://rdrr.io/pkg/targets/man/tar_pipeline.html'>tar_pipeline</a></span>(
-    <span class='fu'><a href='https://rdrr.io/pkg/targets/man/tar_target.html'>tar_target</a></span>(<span class='kw'>data</span>, <span class='fu'><a href='https://rdrr.io/r/base/data.frame.html'>data.frame</a></span>(x = <span class='fu'><a href='https://rdrr.io/r/base/seq.html'>seq_len</a></span>(<span class='fl'>26</span>), y = <span class='kw'>letters</span>)),
-    <span class='fu'>tar_knit</span>(<span class='kw'>report</span>, <span class='st'>"report.Rmd"</span>)
-  )
-})
-<span class='kw'>targets</span>::<span class='fu'><a href='https://rdrr.io/pkg/targets/man/tar_make.html'>tar_make</a></span>()
-})
-}
+<span class='op'>)</span>
+<span class='fu'><a href='https://rdrr.io/r/base/writeLines.html'>writeLines</a></span><span class='op'>(</span><span class='va'>lines</span>, <span class='st'>"report.Rmd"</span><span class='op'>)</span>
+<span class='fu'>targets</span><span class='fu'>::</span><span class='fu'><a href='https://wlandau.github.io/targets/reference/tar_script.html'>tar_script</a></span><span class='op'>(</span><span class='op'>{</span>
+  <span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='https://wlandau.github.io/tarchetypes/'>tarchetypes</a></span><span class='op'>)</span>
+  <span class='fu'><a href='https://wlandau.github.io/targets/reference/tar_pipeline.html'>tar_pipeline</a></span><span class='op'>(</span>
+    <span class='fu'><a href='https://wlandau.github.io/targets/reference/tar_target.html'>tar_target</a></span><span class='op'>(</span><span class='va'>data</span>, <span class='fu'><a href='https://rdrr.io/r/base/data.frame.html'>data.frame</a></span><span class='op'>(</span>x <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/seq.html'>seq_len</a></span><span class='op'>(</span><span class='fl'>26</span><span class='op'>)</span>, y <span class='op'>=</span> <span class='va'>letters</span><span class='op'>)</span><span class='op'>)</span>,
+    <span class='fu'>tar_knit</span><span class='op'>(</span><span class='va'>report</span>, <span class='st'>"report.Rmd"</span><span class='op'>)</span>
+  <span class='op'>)</span>
+<span class='op'>}</span><span class='op'>)</span>
+<span class='fu'>targets</span><span class='fu'>::</span><span class='fu'><a href='https://wlandau.github.io/targets/reference/tar_make.html'>tar_make</a></span><span class='op'>(</span><span class='op'>)</span>
+<span class='op'>}</span><span class='op'>)</span>
+<span class='op'>}</span>
 </div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
