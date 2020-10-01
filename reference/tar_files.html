@@ -235,6 +235,10 @@ e.g. <code>resources = list(handle = curl::new_handle())</code>.</p></li>
 <li><p>Custom compression level for <code>fst::write_fst()</code> if
 <code>format</code> is <code>"fst"</code>, <code>"fst_dt"</code>, or <code>"fst_tbl"</code>, e.g.
 <code>resources = list(compress = 100)</code>.</p></li>
+<li><p>AWS bucket and prefix for the <code>"aws_"</code> formats, e.g.
+<code>resources = list(bucket = "your-bucket", prefix = "folder/name")</code>.
+<code>bucket</code> is required for AWS formats. See the cloud computing chapter
+of the manual for details.</p></li>
 </ul></td>
     </tr>
     <tr>

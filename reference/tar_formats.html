@@ -141,6 +141,24 @@
   cue <span class='op'>=</span> <span class='fu'>targets</span><span class='fu'>::</span><span class='fu'><a href='https://wlandau.github.io/targets/reference/tar_option_get.html'>tar_option_get</a></span><span class='op'>(</span><span class='st'>"cue"</span><span class='op'>)</span>
 <span class='op'>)</span>
 
+<span class='fu'>tar_url</span><span class='op'>(</span>
+  <span class='va'>name</span>,
+  <span class='va'>command</span>,
+  pattern <span class='op'>=</span> <span class='cn'>NULL</span>,
+  tidy_eval <span class='op'>=</span> <span class='fu'>targets</span><span class='fu'>::</span><span class='fu'><a href='https://wlandau.github.io/targets/reference/tar_option_get.html'>tar_option_get</a></span><span class='op'>(</span><span class='st'>"tidy_eval"</span><span class='op'>)</span>,
+  packages <span class='op'>=</span> <span class='fu'>targets</span><span class='fu'>::</span><span class='fu'><a href='https://wlandau.github.io/targets/reference/tar_option_get.html'>tar_option_get</a></span><span class='op'>(</span><span class='st'>"packages"</span><span class='op'>)</span>,
+  library <span class='op'>=</span> <span class='fu'>targets</span><span class='fu'>::</span><span class='fu'><a href='https://wlandau.github.io/targets/reference/tar_option_get.html'>tar_option_get</a></span><span class='op'>(</span><span class='st'>"library"</span><span class='op'>)</span>,
+  iteration <span class='op'>=</span> <span class='fu'>targets</span><span class='fu'>::</span><span class='fu'><a href='https://wlandau.github.io/targets/reference/tar_option_get.html'>tar_option_get</a></span><span class='op'>(</span><span class='st'>"iteration"</span><span class='op'>)</span>,
+  error <span class='op'>=</span> <span class='fu'>targets</span><span class='fu'>::</span><span class='fu'><a href='https://wlandau.github.io/targets/reference/tar_option_get.html'>tar_option_get</a></span><span class='op'>(</span><span class='st'>"error"</span><span class='op'>)</span>,
+  memory <span class='op'>=</span> <span class='fu'>targets</span><span class='fu'>::</span><span class='fu'><a href='https://wlandau.github.io/targets/reference/tar_option_get.html'>tar_option_get</a></span><span class='op'>(</span><span class='st'>"memory"</span><span class='op'>)</span>,
+  deployment <span class='op'>=</span> <span class='fu'>targets</span><span class='fu'>::</span><span class='fu'><a href='https://wlandau.github.io/targets/reference/tar_option_get.html'>tar_option_get</a></span><span class='op'>(</span><span class='st'>"deployment"</span><span class='op'>)</span>,
+  priority <span class='op'>=</span> <span class='fu'>targets</span><span class='fu'>::</span><span class='fu'><a href='https://wlandau.github.io/targets/reference/tar_option_get.html'>tar_option_get</a></span><span class='op'>(</span><span class='st'>"priority"</span><span class='op'>)</span>,
+  resources <span class='op'>=</span> <span class='fu'>targets</span><span class='fu'>::</span><span class='fu'><a href='https://wlandau.github.io/targets/reference/tar_option_get.html'>tar_option_get</a></span><span class='op'>(</span><span class='st'>"resources"</span><span class='op'>)</span>,
+  storage <span class='op'>=</span> <span class='fu'>targets</span><span class='fu'>::</span><span class='fu'><a href='https://wlandau.github.io/targets/reference/tar_option_get.html'>tar_option_get</a></span><span class='op'>(</span><span class='st'>"storage"</span><span class='op'>)</span>,
+  retrieval <span class='op'>=</span> <span class='fu'>targets</span><span class='fu'>::</span><span class='fu'><a href='https://wlandau.github.io/targets/reference/tar_option_get.html'>tar_option_get</a></span><span class='op'>(</span><span class='st'>"retrieval"</span><span class='op'>)</span>,
+  cue <span class='op'>=</span> <span class='fu'>targets</span><span class='fu'>::</span><span class='fu'><a href='https://wlandau.github.io/targets/reference/tar_option_get.html'>tar_option_get</a></span><span class='op'>(</span><span class='st'>"cue"</span><span class='op'>)</span>
+<span class='op'>)</span>
+
 <span class='fu'>tar_rds</span><span class='op'>(</span>
   <span class='va'>name</span>,
   <span class='va'>command</span>,
@@ -345,6 +363,10 @@ e.g. <code>resources = list(handle = curl::new_handle())</code>.</p></li>
 <li><p>Custom compression level for <code>fst::write_fst()</code> if
 <code>format</code> is <code>"fst"</code>, <code>"fst_dt"</code>, or <code>"fst_tbl"</code>, e.g.
 <code>resources = list(compress = 100)</code>.</p></li>
+<li><p>AWS bucket and prefix for the <code>"aws_"</code> formats, e.g.
+<code>resources = list(bucket = "your-bucket", prefix = "folder/name")</code>.
+<code>bucket</code> is required for AWS formats. See the cloud computing chapter
+of the manual for details.</p></li>
 </ul></td>
     </tr>
     <tr>
