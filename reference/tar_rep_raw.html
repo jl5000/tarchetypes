@@ -224,7 +224,7 @@ the appropriate build decisions if those files are out of date.
 Those paths must point to files or directories,
 and they must not contain characters <code><a href='https://rdrr.io/r/base/Logic.html'>|</a></code> or <code><a href='https://rdrr.io/r/base/Arithmetic.html'>*</a></code>.
 All the files and directories you return must actually exist,
-or else <code>targets</code> will throw an error. (And if <code>storage</code> is <code>"remote"</code>,
+or else <code>targets</code> will throw an error. (And if <code>storage</code> is <code>"worker"</code>,
 <code>targets</code> will first stall out trying to wait for the file
 to arrive over a network file system.)</p></li>
 <li><p><code>"url"</code>: A dynamic input URL. It works like <code>format = "file"</code>
@@ -287,7 +287,10 @@ but the pipeline keeps going.</p></td>
       <th>memory</th>
       <td><p>Character of length 1, memory strategy.
 If <code>"persistent"</code>, the target stays in memory
-until the end of the pipeline.
+until the end of the pipeline (unless <code>storage</code> is <code>"worker"</code>,
+in which case <code>targets</code> unloads the value from memory
+right after storing it in order to avoid sending
+copious data over a network).
 If <code>"transient"</code>, the target gets unloaded
 after every new target completes.
 Either way, the target gets automatically loaded into memory
@@ -296,8 +299,8 @@ whenever another target needs the value.</p></td>
     <tr>
       <th>deployment</th>
       <td><p>Character of length 1, only relevant to
-<code><a href='https://wlandau.github.io/targets/reference/tar_make_clustermq.html'>tar_make_clustermq()</a></code> and <code><a href='https://wlandau.github.io/targets/reference/tar_make_future.html'>tar_make_future()</a></code>. If <code>"remote"</code>,
-the target builds on a remote parallel worker. If <code>"local"</code>,
+<code><a href='https://wlandau.github.io/targets/reference/tar_make_clustermq.html'>tar_make_clustermq()</a></code> and <code><a href='https://wlandau.github.io/targets/reference/tar_make_future.html'>tar_make_future()</a></code>. If <code>"worker"</code>,
+the target builds on a remote parallel worker. If <code>"master"</code>,
 the target builds on the host machine / process managing the pipeline.</p></td>
     </tr>
     <tr>
@@ -328,17 +331,17 @@ of the manual for details.</p></li>
       <th>storage</th>
       <td><p>Character of length 1, only relevant to
 <code><a href='https://wlandau.github.io/targets/reference/tar_make_clustermq.html'>tar_make_clustermq()</a></code> and <code><a href='https://wlandau.github.io/targets/reference/tar_make_future.html'>tar_make_future()</a></code>.
-If <code>"local"</code>, the target's return value is sent back to the
-host machine and saved locally. If <code>"remote"</code>, the remote worker
+If <code>"master"</code>, the target's return value is sent back to the
+host machine and saved locally. If <code>"worker"</code>, the worker
 saves the value.</p></td>
     </tr>
     <tr>
       <th>retrieval</th>
       <td><p>Character of length 1, only relevant to
 <code><a href='https://wlandau.github.io/targets/reference/tar_make_clustermq.html'>tar_make_clustermq()</a></code> and <code><a href='https://wlandau.github.io/targets/reference/tar_make_future.html'>tar_make_future()</a></code>.
-If <code>"local"</code>, the target's dependencies are loaded on the host machine
-and sent to the remote worker before the target builds.
-If <code>"remote"</code>, the remote worker loads the targets dependencies.</p></td>
+If <code>"master"</code>, the target's dependencies are loaded on the host machine
+and sent to the worker before the target builds.
+If <code>"worker"</code>, the worker loads the targets dependencies.</p></td>
     </tr>
     <tr>
       <th>cue</th>
