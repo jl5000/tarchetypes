@@ -263,7 +263,7 @@ chapter of the manual for details.</p></li>
       <th>iteration</th>
       <td><p>Character of length 1, name of the iteration mode
 of the target. Choices:</p><ul>
-<li><p><code>"vector"</code>: branching happens with <code>vectors::vec_slice()</code> and
+<li><p><code>"vector"</code>: branching happens with <code><a href='https://vctrs.r-lib.org/reference/vec_slice.html'>vctrs::vec_slice()</a></code> and
 aggregation happens with <code><a href='https://vctrs.r-lib.org/reference/vec_c.html'>vctrs::vec_c()</a></code>.</p></li>
 <li><p><code>"list"</code>, branching happens with <code>[[]]</code> and aggregation happens with
 <code><a href='https://rdrr.io/r/base/list.html'>list()</a></code>.</p></li>
@@ -300,7 +300,7 @@ whenever another target needs the value.</p></td>
       <th>deployment</th>
       <td><p>Character of length 1, only relevant to
 <code><a href='https://wlandau.github.io/targets/reference/tar_make_clustermq.html'>tar_make_clustermq()</a></code> and <code><a href='https://wlandau.github.io/targets/reference/tar_make_future.html'>tar_make_future()</a></code>. If <code>"worker"</code>,
-the target builds on a remote parallel worker. If <code>"master"</code>,
+the target builds on a parallel worker. If <code>"master"</code>,
 the target builds on the host machine / process managing the pipeline.</p></td>
     </tr>
     <tr>

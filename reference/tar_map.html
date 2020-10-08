@@ -123,7 +123,7 @@
     <p>Define collections of new targets.</p>
     </div>
 
-    <pre class="usage"><span class='fu'>tar_map</span><span class='op'>(</span><span class='va'>values</span>, <span class='va'>...</span>, names <span class='op'>=</span> <span class='fu'>tidyselect</span><span class='fu'>::</span><span class='fu'><a href='https://tidyselect.r-lib.org/reference/everything.html'>everything</a></span><span class='op'>(</span><span class='op'>)</span>, unlist <span class='op'>=</span> <span class='cn'>TRUE</span><span class='op'>)</span></pre>
+    <pre class="usage"><span class='fu'>tar_map</span><span class='op'>(</span><span class='va'>values</span>, <span class='va'>...</span>, names <span class='op'>=</span> <span class='fu'>tidyselect</span><span class='fu'>::</span><span class='fu'><a href='https://tidyselect.r-lib.org/reference/everything.html'>everything</a></span><span class='op'>(</span><span class='op'>)</span>, unlist <span class='op'>=</span> <span class='cn'>FALSE</span><span class='op'>)</span></pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -131,9 +131,9 @@
     <tr>
       <th>values</th>
       <td><p>Named list or data frame with values to iterate over.
-The names are the names of symbols in the commands and pattern statements,
-and the elements are values that get substituted in place of those
-symbols. Elements of the <code>values</code> list
+The names are the names of symbols in the commands and pattern
+statements, and the elements are values that get substituted
+in place of those symbols. Elements of the <code>values</code> list
 should be small objects that can easily deparse to names,
 such as characters, integers, and symbols.
 To create a list of symbols as a column of <code>values</code>,
@@ -155,15 +155,18 @@ or tidyselect helpers like <code><a href='https://tidyselect.r-lib.org/reference
       <th>unlist</th>
       <td><p>Logical, whether to flatten the returned list of targets.
 If <code>unlist = FALSE</code>, the list is nested and sub-lists
-are grouped by the original input targets.</p></td>
+are named and grouped by the original input targets.
+If <code>unlist = TRUE</code>, the return value is a flat list of targets
+named by the new target names.</p></td>
     </tr>
     </table>
 
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
     <p>A list of new target objects. If <code>unlist</code> is <code>FALSE</code>,
-the list is nested and sub-lists are grouped by the original
-input targets.</p>
+the list is nested and sub-lists are named and grouped by the original
+input targets. If <code>unlist = TRUE</code>, the return value is a flat list of
+targets named by the new target names.</p>
     <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
 
     <p><code>tar_map()</code> creates collections of new
