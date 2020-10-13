@@ -148,7 +148,7 @@ to be written in the pipeline as <code>target = command</code> instead of
 target objects if they are unnamed.
 <code>tar_plan(x = 1, y = 2, tar_target(z, 3), tar_render(r, "r.Rmd"))</code>
 is equivalent to
-<code>tar_plan(tar_target(x, 1), tar_target(y, 2), tar_target(z, 3), tar_render(r, "r.Rmd"))</code>. # nolint</p>
+<code><a href='https://wlandau.github.io/targets/reference/tar_pipeline.html'>tar_pipeline(tar_target(x, 1), tar_target(y, 2), tar_target(z, 3), tar_render(r, "r.Rmd"))</a></code>. # nolint</p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'><span class='kw'>if</span> <span class='op'>(</span><span class='cn'>FALSE</span><span class='op'>)</span> <span class='op'>{</span>

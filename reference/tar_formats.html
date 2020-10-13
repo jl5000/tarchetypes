@@ -345,14 +345,17 @@ whenever another target needs the value.</p></td>
       <th>deployment</th>
       <td><p>Character of length 1, only relevant to
 <code><a href='https://wlandau.github.io/targets/reference/tar_make_clustermq.html'>tar_make_clustermq()</a></code> and <code><a href='https://wlandau.github.io/targets/reference/tar_make_future.html'>tar_make_future()</a></code>. If <code>"worker"</code>,
-the target builds on a parallel worker. If <code>"master"</code>,
+the target builds on a parallel worker. If <code>"main"</code>,
 the target builds on the host machine / process managing the pipeline.</p></td>
     </tr>
     <tr>
       <th>priority</th>
       <td><p>Numeric of length 1 between 0 and 1. Controls which
 targets get deployed first when multiple competing targets are ready
-simultaneously. Targets with priorities closer to 1 get built earlier.</p></td>
+simultaneously. Targets with priorities closer to 1 get built earlier.
+Only applies to <code><a href='https://wlandau.github.io/targets/reference/tar_make_future.html'>tar_make_future()</a></code> and <code><a href='https://wlandau.github.io/targets/reference/tar_make_clustermq.html'>tar_make_clustermq()</a></code>
+(not <code><a href='https://wlandau.github.io/targets/reference/tar_make.html'>tar_make()</a></code>). <code><a href='https://wlandau.github.io/targets/reference/tar_make_future.html'>tar_make_future()</a></code> with no extra settings is
+a drop-in replacement for <code><a href='https://wlandau.github.io/targets/reference/tar_make.html'>tar_make()</a></code> in this case.</p></td>
     </tr>
     <tr>
       <th>resources</th>
@@ -376,7 +379,7 @@ of the manual for details.</p></li>
       <th>storage</th>
       <td><p>Character of length 1, only relevant to
 <code><a href='https://wlandau.github.io/targets/reference/tar_make_clustermq.html'>tar_make_clustermq()</a></code> and <code><a href='https://wlandau.github.io/targets/reference/tar_make_future.html'>tar_make_future()</a></code>.
-If <code>"master"</code>, the target's return value is sent back to the
+If <code>"main"</code>, the target's return value is sent back to the
 host machine and saved locally. If <code>"worker"</code>, the worker
 saves the value.</p></td>
     </tr>
@@ -384,7 +387,7 @@ saves the value.</p></td>
       <th>retrieval</th>
       <td><p>Character of length 1, only relevant to
 <code><a href='https://wlandau.github.io/targets/reference/tar_make_clustermq.html'>tar_make_clustermq()</a></code> and <code><a href='https://wlandau.github.io/targets/reference/tar_make_future.html'>tar_make_future()</a></code>.
-If <code>"master"</code>, the target's dependencies are loaded on the host machine
+If <code>"main"</code>, the target's dependencies are loaded on the host machine
 and sent to the worker before the target builds.
 If <code>"worker"</code>, the worker loads the targets dependencies.</p></td>
     </tr>
