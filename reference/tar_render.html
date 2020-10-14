@@ -128,6 +128,7 @@ targets pipeline." />
     <pre class="usage"><span class='fu'>tar_render</span><span class='op'>(</span>
   <span class='va'>name</span>,
   <span class='va'>path</span>,
+  tidy_eval <span class='op'>=</span> <span class='fu'>targets</span><span class='fu'>::</span><span class='fu'><a href='https://wlandau.github.io/targets/reference/tar_option_get.html'>tar_option_get</a></span><span class='op'>(</span><span class='st'>"tidy_eval"</span><span class='op'>)</span>,
   packages <span class='op'>=</span> <span class='fu'>targets</span><span class='fu'>::</span><span class='fu'><a href='https://wlandau.github.io/targets/reference/tar_option_get.html'>tar_option_get</a></span><span class='op'>(</span><span class='st'>"packages"</span><span class='op'>)</span>,
   library <span class='op'>=</span> <span class='fu'>targets</span><span class='fu'>::</span><span class='fu'><a href='https://wlandau.github.io/targets/reference/tar_option_get.html'>tar_option_get</a></span><span class='op'>(</span><span class='st'>"library"</span><span class='op'>)</span>,
   error <span class='op'>=</span> <span class='fu'>targets</span><span class='fu'>::</span><span class='fu'><a href='https://wlandau.github.io/targets/reference/tar_option_get.html'>tar_option_get</a></span><span class='op'>(</span><span class='st'>"error"</span><span class='op'>)</span>,
@@ -151,6 +152,13 @@ targets pipeline." />
       <th>path</th>
       <td><p>Character string, file path to the R Markdown source file.
 Must have length 1.</p></td>
+    </tr>
+    <tr>
+      <th>tidy_eval</th>
+      <td><p>Logical, whether to enable tidy evaluation
+when interpreting <code>command</code> and <code>pattern</code>. If <code>TRUE</code>, you can use the
+"bang-bang" operator <code>!!</code> to programmatically insert
+the values of global objects.</p></td>
     </tr>
     <tr>
       <th>packages</th>
@@ -223,7 +231,17 @@ rules that decide whether the target is up to date.</p></td>
     </tr>
     <tr>
       <th>...</th>
-      <td><p>Named arguments to <code><a href='https://rdrr.io/pkg/rmarkdown/man/render.html'>rmarkdown::render()</a></code></p></td>
+      <td><p>Named arguments to <code><a href='https://rdrr.io/pkg/rmarkdown/man/render.html'>rmarkdown::render()</a></code>.
+These arguments are evaluated when the target actually runs in
+<code><a href='https://wlandau.github.io/targets/reference/tar_make.html'>tar_make()</a></code>, not when the target is defined. That means, for
+example, you can use upstream targets as parameters of
+parameterized R Markdown reports.
+<code>tar_render(your_target, "your_report.Rmd", params = list(your_param = your_target))</code> # nolint
+will run <code><a href='https://rdrr.io/pkg/rmarkdown/man/render.html'>rmarkdown::render("your_report.Rmd", params = list(your_param = your_target))</a></code>. # nolint
+For parameterized reports, it is recommended to supply a distinct
+<code>output_file</code> argument to each <code>tar_render()</code> call
+and set useful defaults for parameters in the R Markdown source.
+See the examples section for a demonstration.</p></td>
     </tr>
     </table>
 
@@ -264,6 +282,7 @@ in the target and <code>quiet = TRUE</code> in <code><a href='https://rdrr.io/pk
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'><span class='kw'>if</span> <span class='op'>(</span><span class='cn'>FALSE</span><span class='op'>)</span> <span class='op'>{</span>
 <span class='fu'>targets</span><span class='fu'>::</span><span class='fu'><a href='https://wlandau.github.io/targets/reference/tar_dir.html'>tar_dir</a></span><span class='op'>(</span><span class='op'>{</span>
+<span class='co'># Unparameterized R Markdown:</span>
 <span class='va'>lines</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span>
   <span class='st'>"---"</span>,
   <span class='st'>"title: report"</span>,
@@ -283,6 +302,31 @@ in the target and <code>quiet = TRUE</code> in <code><a href='https://rdrr.io/pk
   <span class='op'>)</span>
 <span class='op'>}</span><span class='op'>)</span>
 <span class='fu'>targets</span><span class='fu'>::</span><span class='fu'><a href='https://wlandau.github.io/targets/reference/tar_make.html'>tar_make</a></span><span class='op'>(</span><span class='op'>)</span>
+<span class='co'># browseURL("report.html") # View the report.</span>
+<span class='co'># Parameterized R Markdown:</span>
+<span class='va'>lines</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span>
+  <span class='st'>"---"</span>,
+  <span class='st'>"title: report"</span>,
+  <span class='st'>"output_format: html_document"</span>,
+  <span class='st'>"params:"</span>,
+  <span class='st'>"  your_param: \"default value\""</span>,
+  <span class='st'>"---"</span>,
+  <span class='st'>""</span>,
+  <span class='st'>"```{r}"</span>,
+  <span class='st'>"print(params$your_param)"</span>,
+  <span class='st'>"```"</span>
+<span class='op'>)</span>
+<span class='fu'><a href='https://rdrr.io/r/base/writeLines.html'>writeLines</a></span><span class='op'>(</span><span class='va'>lines</span>, <span class='st'>"report.Rmd"</span><span class='op'>)</span>
+<span class='fu'>targets</span><span class='fu'>::</span><span class='fu'><a href='https://wlandau.github.io/targets/reference/tar_script.html'>tar_script</a></span><span class='op'>(</span><span class='op'>{</span>
+  <span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='https://wlandau.github.io/tarchetypes/'>tarchetypes</a></span><span class='op'>)</span>
+  <span class='fu'><a href='https://wlandau.github.io/targets/reference/tar_pipeline.html'>tar_pipeline</a></span><span class='op'>(</span>
+    <span class='fu'><a href='https://wlandau.github.io/targets/reference/tar_target.html'>tar_target</a></span><span class='op'>(</span><span class='va'>data</span>, <span class='fu'><a href='https://rdrr.io/r/base/data.frame.html'>data.frame</a></span><span class='op'>(</span>x <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/seq.html'>seq_len</a></span><span class='op'>(</span><span class='fl'>26</span><span class='op'>)</span>, y <span class='op'>=</span> <span class='va'>letters</span><span class='op'>)</span><span class='op'>)</span>,
+    <span class='fu'>tar_render</span><span class='op'>(</span><span class='va'>report</span>, <span class='st'>"report.Rmd"</span>, params <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span><span class='op'>(</span>your_param <span class='op'>=</span> <span class='va'>data</span><span class='op'>)</span><span class='op'>)</span>
+  <span class='op'>)</span>
+<span class='op'>}</span><span class='op'>)</span>
+<span class='co'># targets::tar_visnetwork() # The report should be connected to the data.</span>
+<span class='fu'>targets</span><span class='fu'>::</span><span class='fu'><a href='https://wlandau.github.io/targets/reference/tar_make.html'>tar_make</a></span><span class='op'>(</span><span class='op'>)</span>
+<span class='co'># browseURL("report.html") # View the report.</span>
 <span class='op'>}</span><span class='op'>)</span>
 <span class='op'>}</span>
 </div></pre>
