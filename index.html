@@ -166,13 +166,8 @@
 <span class="op">)</span></pre></div>
 <p>With <a href="https://wlandau.github.io/tarchetypes/reference/tar_plan.html"><code>tar_plan()</code></a>, the simplest targets become super easy to write.</p>
 <div class="sourceCode" id="cb5"><pre class="downlit">
-<span class="fu"><a href="https://wlandau.github.io/targets/reference/tar_pipeline.html">tar_pipeline</a></span><span class="op">(</span>
-  <span class="co"># Needs tar_target() because of format = "file":</span>
-  <span class="fu"><a href="https://wlandau.github.io/targets/reference/tar_target.html">tar_target</a></span><span class="op">(</span>
-    <span class="va">raw_data_file</span>,
-    <span class="st">"data/raw_data.csv"</span>,
-    format <span class="op">=</span> <span class="st">"file"</span>
-  <span class="op">)</span>,
+<span class="fu"><a href="reference/tar_plan.html">tar_plan</a></span><span class="op">(</span>
+  <span class="fu"><a href="reference/tar_formats.html">tar_file</a></span><span class="op">(</span><span class="va">raw_data_file</span>, <span class="st">"data/raw_data.csv"</span>, format <span class="op">=</span> <span class="st">"file"</span><span class="op">)</span>,
   <span class="co"># Simple drake-like syntax:</span>
   raw_data <span class="op">=</span> <span class="fu">read_csv</span><span class="op">(</span><span class="va">raw_data_file</span>, col_types <span class="op">=</span> <span class="fu">cols</span><span class="op">(</span><span class="op">)</span><span class="op">)</span>,
   data <span class="op">=</span><span class="va">raw_data</span> <span class="op">%&gt;%</span>
