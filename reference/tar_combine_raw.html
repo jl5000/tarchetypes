@@ -137,6 +137,7 @@ and <code>pattern</code> arguments use standard evaluation.</p>
   iteration <span class='op'>=</span> <span class='fu'>targets</span><span class='fu'>::</span><span class='fu'><a href='https://wlandau.github.io/targets/reference/tar_option_get.html'>tar_option_get</a></span><span class='op'>(</span><span class='st'>"iteration"</span><span class='op'>)</span>,
   error <span class='op'>=</span> <span class='fu'>targets</span><span class='fu'>::</span><span class='fu'><a href='https://wlandau.github.io/targets/reference/tar_option_get.html'>tar_option_get</a></span><span class='op'>(</span><span class='st'>"error"</span><span class='op'>)</span>,
   memory <span class='op'>=</span> <span class='fu'>targets</span><span class='fu'>::</span><span class='fu'><a href='https://wlandau.github.io/targets/reference/tar_option_get.html'>tar_option_get</a></span><span class='op'>(</span><span class='st'>"memory"</span><span class='op'>)</span>,
+  garbage_collection <span class='op'>=</span> <span class='fu'>targets</span><span class='fu'>::</span><span class='fu'><a href='https://wlandau.github.io/targets/reference/tar_option_get.html'>tar_option_get</a></span><span class='op'>(</span><span class='st'>"garbage_collection"</span><span class='op'>)</span>,
   deployment <span class='op'>=</span> <span class='fu'>targets</span><span class='fu'>::</span><span class='fu'><a href='https://wlandau.github.io/targets/reference/tar_option_get.html'>tar_option_get</a></span><span class='op'>(</span><span class='st'>"deployment"</span><span class='op'>)</span>,
   priority <span class='op'>=</span> <span class='fu'>targets</span><span class='fu'>::</span><span class='fu'><a href='https://wlandau.github.io/targets/reference/tar_option_get.html'>tar_option_get</a></span><span class='op'>(</span><span class='st'>"priority"</span><span class='op'>)</span>,
   resources <span class='op'>=</span> <span class='fu'>targets</span><span class='fu'>::</span><span class='fu'><a href='https://wlandau.github.io/targets/reference/tar_option_get.html'>tar_option_get</a></span><span class='op'>(</span><span class='st'>"resources"</span><span class='op'>)</span>,
@@ -292,7 +293,19 @@ copious data over a network).
 If <code>"transient"</code>, the target gets unloaded
 after every new target completes.
 Either way, the target gets automatically loaded into memory
-whenever another target needs the value.</p></td>
+whenever another target needs the value.
+For cloud-based dynamic files such as <code>format = "aws_file"</code>,
+this memory policy applies to
+temporary local copies of the file in <code>_targets/scratch/"</code>:
+<code>"persistent"</code> means they remain until the end of the pipeline,
+and <code>"transient"</code> means they get deleted from the file system
+as soon as possible. The former conserves bandwidth,
+and the latter conserves local storage.</p></td>
+    </tr>
+    <tr>
+      <th>garbage_collection</th>
+      <td><p>Logical, whether to run <code><a href='https://rdrr.io/r/base/gc.html'>base::gc()</a></code>
+just before the target runs.</p></td>
     </tr>
     <tr>
       <th>deployment</th>
