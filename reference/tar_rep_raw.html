@@ -330,6 +330,8 @@ a drop-in replacement for <code><a href='https://wlandau.github.io/targets/refer
       <td><p>A named list of computing resources. Uses:</p><ul>
 <li><p>Template file wildcards for <code>future::future()</code> in <code><a href='https://wlandau.github.io/targets/reference/tar_make_future.html'>tar_make_future()</a></code>.</p></li>
 <li><p>Template file wildcards <code>clustermq::workers()</code> in <code><a href='https://wlandau.github.io/targets/reference/tar_make_clustermq.html'>tar_make_clustermq()</a></code>.</p></li>
+<li><p>Custom target-level <code>future::plan()</code>, e.g.
+<code>resources = list(plan = future.callr::callr)</code>.</p></li>
 <li><p>Custom <code>curl</code> handle if <code>format = "url"</code>,
 e.g. <code>resources = list(handle = curl::new_handle())</code>.</p></li>
 <li><p>Custom preset for <code>qs::qsave()</code> if <code>format = "qs"</code>, e.g.
