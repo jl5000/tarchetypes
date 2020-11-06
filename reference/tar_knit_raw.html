@@ -236,7 +236,12 @@ rules that decide whether the target is up to date.</p></td>
       <td><p>Optional language object with a list
 of named arguments to <code><a href='https://rdrr.io/pkg/knitr/man/knit.html'>knitr::knit()</a></code>.
 Cannot be an expression object.
-(Use <code><a href='https://rdrr.io/r/base/substitute.html'>quote()</a></code>, not <code><a href='https://rdrr.io/r/base/expression.html'>expression()</a></code>.)</p></td>
+(Use <code><a href='https://rdrr.io/r/base/substitute.html'>quote()</a></code>, not <code><a href='https://rdrr.io/r/base/expression.html'>expression()</a></code>.)
+The reason for quoting is that these arguments may depend on
+upstream targets whose values are not available at
+the time the target is defined, and because <code>tar_knit_raw()</code>
+is the "raw" version of a function, we want to avoid
+all non-standard evaluation.</p></td>
     </tr>
     </table>
 

@@ -236,7 +236,12 @@ rules that decide whether the target is up to date.</p></td>
       <td><p>Optional language object with a list
 of named arguments to <code><a href='https://rdrr.io/pkg/rmarkdown/man/render.html'>rmarkdown::render()</a></code>.
 Cannot be an expression object.
-(Use <code><a href='https://rdrr.io/r/base/substitute.html'>quote()</a></code>, not <code><a href='https://rdrr.io/r/base/expression.html'>expression()</a></code>.)</p></td>
+(Use <code><a href='https://rdrr.io/r/base/substitute.html'>quote()</a></code>, not <code><a href='https://rdrr.io/r/base/expression.html'>expression()</a></code>.)
+The reason for quoting is that these arguments may depend on
+upstream targets whose values are not available at
+the time the target is defined, and because <code>tar_render_raw()</code>
+is the "raw" version of a function, we want to avoid
+all non-standard evaluation.</p></td>
     </tr>
     </table>
 
@@ -302,7 +307,7 @@ is a language object.</p>
     <span class='fu'>tar_render_raw</span><span class='op'>(</span>
       <span class='st'>"report"</span>,
       <span class='st'>"report.Rmd"</span>,
-      render_arguments <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/substitute.html'>quote</a></span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span><span class='op'>(</span>params <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span><span class='op'>(</span>your_param <span class='op'>=</span> <span class='va'>data</span><span class='op'>)</span><span class='op'>)</span><span class='op'>)</span>
+      render_arguments <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span><span class='op'>(</span>params <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span><span class='op'>(</span>your_param <span class='op'>=</span> <span class='va'>data</span><span class='op'>)</span><span class='op'>)</span>
     <span class='op'>)</span>
   <span class='op'>)</span>
 <span class='op'>}</span><span class='op'>)</span>

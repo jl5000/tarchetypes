@@ -107,8 +107,8 @@
 <span id="cb1-8"><a href="#cb1-8"></a><span class="dt">tar_read(dataset)</span></span>
 <span id="cb1-9"><a href="#cb1-9"></a><span class="st">```</span></span></code></pre></div>
 <p>We want to define a target to render the report. And because the report calls <code><a href="https://wlandau.github.io/targets/reference/tar_read.html">tar_read(dataset)</a></code>, this target needs to depend on <code>dataset</code>. Without <code>tarchetypes</code>, it is cumbersome to set up the pipeline correctly.</p>
-<div class="sourceCode" id="cb2"><pre class="downlit">
-<span class="co"># _targets.R</span>
+<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="co"># _targets.R</span>
 <span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://wlandau.github.io/targets/">targets</a></span><span class="op">)</span>
 <span class="fu"><a href="https://wlandau.github.io/targets/reference/tar_pipeline.html">tar_pipeline</a></span><span class="op">(</span>
   <span class="fu"><a href="https://wlandau.github.io/targets/reference/tar_target.html">tar_target</a></span><span class="op">(</span><span class="va">dataset</span>, <span class="fu"><a href="https://rdrr.io/r/base/data.frame.html">data.frame</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">letters</span><span class="op">)</span><span class="op">)</span>,
@@ -136,24 +136,24 @@
     <span class="co"># Avoid building small reports on HPC.</span>
     deployment <span class="op">=</span> <span class="st">"main"</span>
   <span class="op">)</span>
-<span class="op">)</span></pre></div>
+<span class="op">)</span></code></pre></div>
 <p>With <code>tarchetypes</code>, we can simplify the pipeline with the <code><a href="reference/tar_render.html">tar_render()</a></code> archetype.</p>
-<div class="sourceCode" id="cb3"><pre class="downlit">
-<span class="co"># _targets.R</span>
+<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="co"># _targets.R</span>
 <span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://wlandau.github.io/targets/">targets</a></span><span class="op">)</span>
 <span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://wlandau.github.io/tarchetypes/">tarchetypes</a></span><span class="op">)</span>
 <span class="fu"><a href="https://wlandau.github.io/targets/reference/tar_pipeline.html">tar_pipeline</a></span><span class="op">(</span>
   <span class="fu"><a href="https://wlandau.github.io/targets/reference/tar_target.html">tar_target</a></span><span class="op">(</span><span class="va">dataset</span>, <span class="fu"><a href="https://rdrr.io/r/base/data.frame.html">data.frame</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">letters</span><span class="op">)</span><span class="op">)</span>,
   <span class="fu"><a href="reference/tar_render.html">tar_render</a></span><span class="op">(</span><span class="va">report</span>, <span class="st">"report.Rmd"</span><span class="op">)</span>
-<span class="op">)</span></pre></div>
+<span class="op">)</span></code></pre></div>
 <p>Above, <code><a href="reference/tar_render.html">tar_render()</a></code> scans code chunks for mentions of targets in <code><a href="https://wlandau.github.io/targets/reference/tar_load.html">tar_load()</a></code> and <code><a href="https://wlandau.github.io/targets/reference/tar_read.html">tar_read()</a></code>, and it enforces the dependency relationships it finds. In our case, it reads <code>report.Rmd</code> and then forces <code>report</code> to depend on <code>dataset</code>. That way, <code><a href="https://wlandau.github.io/targets/reference/tar_make.html">tar_make()</a></code> always processes <code>dataset</code> before <code>report</code>, and it automatically reruns <code>report.Rmd</code> whenever <code>dataset</code> changes.</p>
 </div>
 <div id="pipeline-archetype-example" class="section level2">
 <h2 class="hasAnchor">
 <a href="#pipeline-archetype-example" class="anchor"></a>Pipeline archetype example</h2>
 <p><a href="https://wlandau.github.io/tarchetypes/reference/tar_plan.html"><code>tar_plan()</code></a> is a version of <a href="https://wlandau.github.io/targets/reference/tar_pipeline.html"><code>tar_pipeline()</code></a> that looks and feels like <a href="https://docs.ropensci.org/drake/reference/drake_plan.html"><code>drake_plan()</code></a>. For simple targets with no configuration, you can write <code>target = command</code> instead of <code><a href="https://wlandau.github.io/targets/reference/tar_target.html">tar_target(target, command)</a></code>. Ordinarily, pipelines in <code>_targets.R</code> are written like this:</p>
-<div class="sourceCode" id="cb4"><pre class="downlit">
-<span class="fu"><a href="https://wlandau.github.io/targets/reference/tar_pipeline.html">tar_pipeline</a></span><span class="op">(</span>
+<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="https://wlandau.github.io/targets/reference/tar_pipeline.html">tar_pipeline</a></span><span class="op">(</span>
   <span class="fu"><a href="https://wlandau.github.io/targets/reference/tar_target.html">tar_target</a></span><span class="op">(</span>
     <span class="va">raw_data_file</span>,
     <span class="st">"data/raw_data.csv"</span>,
@@ -171,10 +171,10 @@
   <span class="fu"><a href="https://wlandau.github.io/targets/reference/tar_target.html">tar_target</a></span><span class="op">(</span><span class="va">hist</span>, <span class="fu">create_plot</span><span class="op">(</span><span class="va">data</span><span class="op">)</span><span class="op">)</span>,
   <span class="fu"><a href="https://wlandau.github.io/targets/reference/tar_target.html">tar_target</a></span><span class="op">(</span><span class="va">fit</span>, <span class="fu">biglm</span><span class="op">(</span><span class="va">Ozone</span> <span class="op">~</span> <span class="va">Wind</span> <span class="op">+</span> <span class="va">Temp</span>, <span class="va">data</span><span class="op">)</span><span class="op">)</span>,
   <span class="fu"><a href="reference/tar_render.html">tar_render</a></span><span class="op">(</span><span class="va">report</span>, <span class="st">"report.Rmd"</span><span class="op">)</span>
-<span class="op">)</span></pre></div>
+<span class="op">)</span></code></pre></div>
 <p>With <a href="https://wlandau.github.io/tarchetypes/reference/tar_plan.html"><code>tar_plan()</code></a>, the simplest targets become super easy to write.</p>
-<div class="sourceCode" id="cb5"><pre class="downlit">
-<span class="fu"><a href="reference/tar_plan.html">tar_plan</a></span><span class="op">(</span>
+<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="reference/tar_plan.html">tar_plan</a></span><span class="op">(</span>
   <span class="fu"><a href="reference/tar_formats.html">tar_file</a></span><span class="op">(</span><span class="va">raw_data_file</span>, <span class="st">"data/raw_data.csv"</span>, format <span class="op">=</span> <span class="st">"file"</span><span class="op">)</span>,
   <span class="co"># Simple drake-like syntax:</span>
   raw_data <span class="op">=</span> <span class="fu">read_csv</span><span class="op">(</span><span class="va">raw_data_file</span>, col_types <span class="op">=</span> <span class="fu">cols</span><span class="op">(</span><span class="op">)</span><span class="op">)</span>,
@@ -184,15 +184,15 @@
   fit <span class="op">=</span> <span class="fu">biglm</span><span class="op">(</span><span class="va">Ozone</span> <span class="op">~</span> <span class="va">Wind</span> <span class="op">+</span> <span class="va">Temp</span>, <span class="va">data</span><span class="op">)</span>,
   <span class="co"># Needs tar_render() because it is a target archetype:</span>
   <span class="fu"><a href="reference/tar_render.html">tar_render</a></span><span class="op">(</span><span class="va">report</span>, <span class="st">"report.Rmd"</span><span class="op">)</span>
-<span class="op">)</span></pre></div>
+<span class="op">)</span></code></pre></div>
 </div>
 <div id="installation" class="section level2">
 <h2 class="hasAnchor">
 <a href="#installation" class="anchor"></a>Installation</h2>
 <p>Install the GitHub development version to access the latest features and patches.</p>
-<div class="sourceCode" id="cb6"><pre class="downlit">
-<span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://remotes.r-lib.org">remotes</a></span><span class="op">)</span>
-<span class="fu"><a href="https://remotes.r-lib.org/reference/install_github.html">install_github</a></span><span class="op">(</span><span class="st">"wlandau/tarchetypes"</span><span class="op">)</span></pre></div>
+<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://remotes.r-lib.org">remotes</a></span><span class="op">)</span>
+<span class="fu"><a href="https://remotes.r-lib.org/reference/install_github.html">install_github</a></span><span class="op">(</span><span class="st">"wlandau/tarchetypes"</span><span class="op">)</span></code></pre></div>
 </div>
 <div id="documentation" class="section level2">
 <h2 class="hasAnchor">
