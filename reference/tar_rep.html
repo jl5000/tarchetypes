@@ -411,7 +411,8 @@ are aggregated with <code><a href='https://rdrr.io/r/base/list.html'>list()</a><
 then <code><a href='https://vctrs.r-lib.org/reference/vec_c.html'>vctrs::vec_c()</a></code>. If <code>"group"</code>, then <code><a href='https://vctrs.r-lib.org/reference/vec_bind.html'>vctrs::vec_rbind()</a></code>.</p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='fu'>targets</span><span class='fu'>::</span><span class='fu'><a href='https://wlandau.github.io/targets/reference/tar_dir.html'>tar_dir</a></span><span class='op'>(</span><span class='op'>{</span>
+    <pre class="examples"><div class='input'><span class='kw'>if</span> <span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/identical.html'>identical</a></span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/Sys.getenv.html'>Sys.getenv</a></span><span class='op'>(</span><span class='st'>"TARCHETYPES_LONG_EXAMPLES"</span><span class='op'>)</span>, <span class='st'>"true"</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>{</span>
+<span class='fu'>targets</span><span class='fu'>::</span><span class='fu'><a href='https://wlandau.github.io/targets/reference/tar_dir.html'>tar_dir</a></span><span class='op'>(</span><span class='op'>{</span>
 <span class='fu'>targets</span><span class='fu'>::</span><span class='fu'><a href='https://wlandau.github.io/targets/reference/tar_script.html'>tar_script</a></span><span class='op'>(</span><span class='op'>{</span>
   <span class='fu'>targets</span><span class='fu'>::</span><span class='fu'><a href='https://wlandau.github.io/targets/reference/tar_pipeline.html'>tar_pipeline</a></span><span class='op'>(</span>
     <span class='fu'>tarchetypes</span><span class='fu'>::</span><span class='fu'>tar_rep</span><span class='op'>(</span>
@@ -425,19 +426,8 @@ then <code><a href='https://vctrs.r-lib.org/reference/vec_c.html'>vctrs::vec_c()
 <span class='fu'>targets</span><span class='fu'>::</span><span class='fu'><a href='https://wlandau.github.io/targets/reference/tar_make.html'>tar_make</a></span><span class='op'>(</span>callr_function <span class='op'>=</span> <span class='cn'>NULL</span><span class='op'>)</span>
 <span class='fu'>targets</span><span class='fu'>::</span><span class='fu'><a href='https://wlandau.github.io/targets/reference/tar_read.html'>tar_read</a></span><span class='op'>(</span><span class='va'>x</span><span class='op'>)</span>
 <span class='op'>}</span><span class='op'>)</span>
-</div><div class='output co'>#&gt; <span class='message'><span style='color: #0000BB;'>●</span><span> run target x_batch</span></div><div class='output co'>#&gt; <span class='message'></span><span style='color: #0000BB;'>●</span><span> run branch x_c1cb9e8a</span></div><div class='output co'>#&gt; <span class='message'></span><span style='color: #0000BB;'>●</span><span> run branch x_be02823c</span></div><div class='output co'>#&gt;       x tar_batch tar_rep
-#&gt; 1  7483         1       1
-#&gt; 2  9719         1       1
-#&gt; 3  3772         1       2
-#&gt; 4  4925         1       2
-#&gt; 5   820         1       3
-#&gt; 6  6387         1       3
-#&gt; 7  2502         2       1
-#&gt; 8  7129         2       1
-#&gt; 9  8519         2       2
-#&gt; 10 3929         2       2
-#&gt; 11 5193         2       3
-#&gt; 12 9447         2       3</div></span></pre>
+<span class='op'>}</span>
+</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">
