@@ -157,6 +157,11 @@ branches over files or urls.</p>
       <td><p>Symbol, name of the target.</p></td>
     </tr>
     <tr>
+      <th>files</th>
+      <td><p>Nonempty character vector of known existing input files
+to track for changes.</p></td>
+    </tr>
+    <tr>
       <th>format</th>
       <td><p>Character, either <code>"file"</code> or <code>"url"</code>. See the <code>format</code>
 argument of <code><a href='https://wlandau.github.io/targets/reference/tar_target.html'>targets::tar_target()</a></code> for details.</p></td>
@@ -260,8 +265,8 @@ except the <code>name</code> argument must be a character string.</p>
 <p><code>tar_files_input_raw()</code> creates a pair of targets, one upstream
 and one downstream. The upstream target does some work
 and returns some file paths, and the downstream
-target is a pattern that applies <code>format = "file"</code>
-or <code>format = "url"</code>.
+target is a pattern that applies <code>format = "file"</code>,
+<code>format = "url"</code>, or <code>format = "aws_file"</code>.
 This is the correct way to dynamically
 iterate over file/url targets. It makes sure any downstream patterns
 only rerun some of their branches if the files/urls change.

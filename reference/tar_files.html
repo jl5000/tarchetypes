@@ -165,9 +165,10 @@ branches over files or urls.</p>
     </tr>
     <tr>
       <th>tidy_eval</th>
-      <td><p>Whether to invoke tidy evaluation
-(e.g. the <code>!!</code> operator from <code>rlang</code>) as soon as the target is defined
-(before <code><a href='https://wlandau.github.io/targets/reference/tar_make.html'>tar_make()</a></code>). Applies to the <code>command</code> argument.</p></td>
+      <td><p>Logical, whether to enable tidy evaluation
+when interpreting <code>command</code> and <code>pattern</code>. If <code>TRUE</code>, you can use the
+"bang-bang" operator <code>!!</code> to programmatically insert
+the values of global objects.</p></td>
     </tr>
     <tr>
       <th>packages</th>
@@ -182,7 +183,8 @@ when loading <code>packages</code>.</p></td>
     </tr>
     <tr>
       <th>format</th>
-      <td><p>Character, either <code>"file"</code> or <code>"url"</code>. See the <code>format</code>
+      <td><p>Character of length 1.
+Must be <code>"file"</code>, <code>"url"</code>, or <code>"aws_file"</code>. See the <code>format</code>
 argument of <code><a href='https://wlandau.github.io/targets/reference/tar_target.html'>targets::tar_target()</a></code> for details.</p></td>
     </tr>
     <tr>
@@ -305,8 +307,8 @@ or <code>format = "url"</code>.</p>
     <p><code>tar_files()</code> creates a pair of targets, one upstream
 and one downstream. The upstream target does some work
 and returns some file paths, and the downstream
-target is a pattern that applies <code>format = "file"</code>
-or <code>format = "url"</code>.
+target is a pattern that applies <code>format = "file"</code>,
+<code>format = "url"</code>, or <code>format = "aws_file"</code>.
 This is the correct way to dynamically
 iterate over file/url targets. It makes sure any downstream patterns
 only rerun some of their branches if the files/urls change.

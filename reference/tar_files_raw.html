@@ -175,7 +175,8 @@ when loading <code>packages</code>.</p></td>
     </tr>
     <tr>
       <th>format</th>
-      <td><p>Character, either <code>"file"</code> or <code>"url"</code>. See the <code>format</code>
+      <td><p>Character of length 1.
+Must be <code>"file"</code>, <code>"url"</code>, or <code>"aws_file"</code>. See the <code>format</code>
 argument of <code><a href='https://wlandau.github.io/targets/reference/tar_target.html'>targets::tar_target()</a></code> for details.</p></td>
     </tr>
     <tr>
@@ -301,8 +302,8 @@ and <code>command</code> must be a language object.</p>
 <p><code>tar_files_raw()</code> creates a pair of targets, one upstream
 and one downstream. The upstream target does some work
 and returns some file paths, and the downstream
-target is a pattern that applies <code>format = "file"</code>
-or <code>format = "url"</code>.
+target is a pattern that applies <code>format = "file"</code>,
+<code>format = "url"</code>, or <code>format = "aws_file"</code>.
 This is the correct way to dynamically
 iterate over file/url targets. It makes sure any downstream patterns
 only rerun some of their branches if the files/urls change.
