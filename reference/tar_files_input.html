@@ -6,7 +6,8 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Easy dynamic branching over files or urls. — tar_files • tarchetypes</title>
+<title>Easy dynamic branching over known existing
+input files or urls. — tar_files_input • tarchetypes</title>
 
 <!-- favicons -->
 <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
@@ -46,9 +47,10 @@
 
 
 
-<meta property="og:title" content="Easy dynamic branching over files or urls. — tar_files" />
+<meta property="og:title" content="Easy dynamic branching over known existing
+input files or urls. — tar_files_input" />
 <meta property="og:description" content="Shorthand for a pattern that correctly
-branches over files or urls." />
+branches over known existing files or urls." />
 <meta property="og:image" content="/logo.svg" />
 
 
@@ -123,32 +125,27 @@ branches over files or urls." />
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Easy dynamic branching over files or urls.</h1>
-    <small class="dont-index">Source: <a href='https://github.com/wlandau/tarchetypes/blob/master/R/tar_files.R'><code>R/tar_files.R</code></a></small>
-    <div class="hidden name"><code>tar_files.Rd</code></div>
+    <h1>Easy dynamic branching over known existing
+input files or urls.</h1>
+    <small class="dont-index">Source: <a href='https://github.com/wlandau/tarchetypes/blob/master/R/tar_files_input.R'><code>R/tar_files_input.R</code></a></small>
+    <div class="hidden name"><code>tar_files_input.Rd</code></div>
     </div>
 
     <div class="ref-description">
     <p>Shorthand for a pattern that correctly
-branches over files or urls.</p>
+branches over known existing files or urls.</p>
     </div>
 
-    <pre class="usage"><span class='fu'>tar_files</span><span class='op'>(</span>
+    <pre class="usage"><span class='fu'>tar_files_input</span><span class='op'>(</span>
   <span class='va'>name</span>,
-  <span class='va'>command</span>,
-  tidy_eval <span class='op'>=</span> <span class='fu'>targets</span><span class='fu'>::</span><span class='fu'><a href='https://wlandau.github.io/targets/reference/tar_option_get.html'>tar_option_get</a></span><span class='op'>(</span><span class='st'>"tidy_eval"</span><span class='op'>)</span>,
-  packages <span class='op'>=</span> <span class='fu'>targets</span><span class='fu'>::</span><span class='fu'><a href='https://wlandau.github.io/targets/reference/tar_option_get.html'>tar_option_get</a></span><span class='op'>(</span><span class='st'>"packages"</span><span class='op'>)</span>,
-  library <span class='op'>=</span> <span class='fu'>targets</span><span class='fu'>::</span><span class='fu'><a href='https://wlandau.github.io/targets/reference/tar_option_get.html'>tar_option_get</a></span><span class='op'>(</span><span class='st'>"library"</span><span class='op'>)</span>,
+  <span class='va'>files</span>,
   format <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"file"</span>, <span class='st'>"url"</span>, <span class='st'>"aws_file"</span><span class='op'>)</span>,
   iteration <span class='op'>=</span> <span class='fu'>targets</span><span class='fu'>::</span><span class='fu'><a href='https://wlandau.github.io/targets/reference/tar_option_get.html'>tar_option_get</a></span><span class='op'>(</span><span class='st'>"iteration"</span><span class='op'>)</span>,
   error <span class='op'>=</span> <span class='fu'>targets</span><span class='fu'>::</span><span class='fu'><a href='https://wlandau.github.io/targets/reference/tar_option_get.html'>tar_option_get</a></span><span class='op'>(</span><span class='st'>"error"</span><span class='op'>)</span>,
   memory <span class='op'>=</span> <span class='fu'>targets</span><span class='fu'>::</span><span class='fu'><a href='https://wlandau.github.io/targets/reference/tar_option_get.html'>tar_option_get</a></span><span class='op'>(</span><span class='st'>"memory"</span><span class='op'>)</span>,
   garbage_collection <span class='op'>=</span> <span class='fu'>targets</span><span class='fu'>::</span><span class='fu'><a href='https://wlandau.github.io/targets/reference/tar_option_get.html'>tar_option_get</a></span><span class='op'>(</span><span class='st'>"garbage_collection"</span><span class='op'>)</span>,
-  deployment <span class='op'>=</span> <span class='fu'>targets</span><span class='fu'>::</span><span class='fu'><a href='https://wlandau.github.io/targets/reference/tar_option_get.html'>tar_option_get</a></span><span class='op'>(</span><span class='st'>"deployment"</span><span class='op'>)</span>,
   priority <span class='op'>=</span> <span class='fu'>targets</span><span class='fu'>::</span><span class='fu'><a href='https://wlandau.github.io/targets/reference/tar_option_get.html'>tar_option_get</a></span><span class='op'>(</span><span class='st'>"priority"</span><span class='op'>)</span>,
   resources <span class='op'>=</span> <span class='fu'>targets</span><span class='fu'>::</span><span class='fu'><a href='https://wlandau.github.io/targets/reference/tar_option_get.html'>tar_option_get</a></span><span class='op'>(</span><span class='st'>"resources"</span><span class='op'>)</span>,
-  storage <span class='op'>=</span> <span class='fu'>targets</span><span class='fu'>::</span><span class='fu'><a href='https://wlandau.github.io/targets/reference/tar_option_get.html'>tar_option_get</a></span><span class='op'>(</span><span class='st'>"storage"</span><span class='op'>)</span>,
-  retrieval <span class='op'>=</span> <span class='fu'>targets</span><span class='fu'>::</span><span class='fu'><a href='https://wlandau.github.io/targets/reference/tar_option_get.html'>tar_option_get</a></span><span class='op'>(</span><span class='st'>"retrieval"</span><span class='op'>)</span>,
   cue <span class='op'>=</span> <span class='fu'>targets</span><span class='fu'>::</span><span class='fu'><a href='https://wlandau.github.io/targets/reference/tar_option_get.html'>tar_option_get</a></span><span class='op'>(</span><span class='st'>"cue"</span><span class='op'>)</span>
 <span class='op'>)</span></pre>
 
@@ -160,25 +157,9 @@ branches over files or urls.</p>
       <td><p>Symbol, name of the target.</p></td>
     </tr>
     <tr>
-      <th>command</th>
-      <td><p>R code to run the target.</p></td>
-    </tr>
-    <tr>
-      <th>tidy_eval</th>
-      <td><p>Whether to invoke tidy evaluation
-(e.g. the <code>!!</code> operator from <code>rlang</code>) as soon as the target is defined
-(before <code><a href='https://wlandau.github.io/targets/reference/tar_make.html'>tar_make()</a></code>). Applies to the <code>command</code> argument.</p></td>
-    </tr>
-    <tr>
-      <th>packages</th>
-      <td><p>Character vector of packages to load right before
-the target builds. Use <code><a href='https://wlandau.github.io/targets/reference/tar_option_set.html'>tar_option_set()</a></code> to set packages
-globally for all subsequent targets you define.</p></td>
-    </tr>
-    <tr>
-      <th>library</th>
-      <td><p>Character vector of library paths to try
-when loading <code>packages</code>.</p></td>
+      <th>files</th>
+      <td><p>Nonempty character vector of known existing input files
+to track for changes.</p></td>
     </tr>
     <tr>
       <th>format</th>
@@ -235,13 +216,6 @@ and the latter conserves local storage.</p></td>
 just before the target runs.</p></td>
     </tr>
     <tr>
-      <th>deployment</th>
-      <td><p>Character of length 1, only relevant to
-<code><a href='https://wlandau.github.io/targets/reference/tar_make_clustermq.html'>tar_make_clustermq()</a></code> and <code><a href='https://wlandau.github.io/targets/reference/tar_make_future.html'>tar_make_future()</a></code>. If <code>"worker"</code>,
-the target builds on a parallel worker. If <code>"main"</code>,
-the target builds on the host machine / process managing the pipeline.</p></td>
-    </tr>
-    <tr>
       <th>priority</th>
       <td><p>Numeric of length 1 between 0 and 1. Controls which
 targets get deployed first when multiple competing targets are ready
@@ -271,22 +245,6 @@ of the manual for details.</p></li>
 </ul></td>
     </tr>
     <tr>
-      <th>storage</th>
-      <td><p>Character of length 1, only relevant to
-<code><a href='https://wlandau.github.io/targets/reference/tar_make_clustermq.html'>tar_make_clustermq()</a></code> and <code><a href='https://wlandau.github.io/targets/reference/tar_make_future.html'>tar_make_future()</a></code>.
-If <code>"main"</code>, the target's return value is sent back to the
-host machine and saved locally. If <code>"worker"</code>, the worker
-saves the value.</p></td>
-    </tr>
-    <tr>
-      <th>retrieval</th>
-      <td><p>Character of length 1, only relevant to
-<code><a href='https://wlandau.github.io/targets/reference/tar_make_clustermq.html'>tar_make_clustermq()</a></code> and <code><a href='https://wlandau.github.io/targets/reference/tar_make_future.html'>tar_make_future()</a></code>.
-If <code>"main"</code>, the target's dependencies are loaded on the host machine
-and sent to the worker before the target builds.
-If <code>"worker"</code>, the worker loads the targets dependencies.</p></td>
-    </tr>
-    <tr>
       <th>cue</th>
       <td><p>An optional object from <code><a href='https://wlandau.github.io/targets/reference/tar_cue.html'>tar_cue()</a></code>
 to customize the rules that decide whether the target is up to date.
@@ -302,7 +260,14 @@ and the downstream target is a pattern that applies <code>format = "file"</code>
 or <code>format = "url"</code>.</p>
     <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
 
-    <p><code>tar_files()</code> creates a pair of targets, one upstream
+    <p><code>tar_files_input()</code> is like <code><a href='tar_files.html'>tar_files()</a></code>
+but more convenient when the files in question already
+exist and are known in advance. Whereas <code><a href='tar_files.html'>tar_files()</a></code>
+always appears outdated (e.g. with <code><a href='https://wlandau.github.io/targets/reference/tar_outdated.html'>tar_outdated()</a></code>)
+because it always needs to check which files it needs to
+branch over, <code>tar_files_input()</code> will appear up to date
+if the files have not changed since last <code><a href='https://wlandau.github.io/targets/reference/tar_make.html'>tar_make()</a></code>.</p>
+<p><code>tar_files_input()</code> creates a pair of targets, one upstream
 and one downstream. The upstream target does some work
 and returns some file paths, and the downstream
 target is a pattern that applies <code>format = "file"</code>
@@ -317,13 +282,15 @@ For more information, visit
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'><span class='kw'>if</span> <span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/identical.html'>identical</a></span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/Sys.getenv.html'>Sys.getenv</a></span><span class='op'>(</span><span class='st'>"TARCHETYPES_LONG_EXAMPLES"</span><span class='op'>)</span>, <span class='st'>"true"</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>{</span>
 <span class='co'># Without loss of generality,</span>
-<span class='co'># tar_files(your_target, fn_that_returns_paths(c("a.txt", "b.txt")))</span>
+<span class='co'># tar_files_input(your_target, c("a.txt", "b.txt"))</span>
 <span class='co'># is equivalent to:</span>
 <span class='co'># list(</span>
 <span class='co'>#   tar_target(</span>
 <span class='co'>#     your_target_files,</span>
-<span class='co'>#     fn_that_returns_paths(c("a.txt", "b.txt")),</span>
-<span class='co'>#     cue = tar_cue(mode = "always")</span>
+<span class='co'>#     c("a.txt", "b.txt"),</span>
+<span class='co'>#     deployment = "main",</span>
+<span class='co'>#     storage = "main",</span>
+<span class='co'>#     retrieval = "main"</span>
 <span class='co'>#   ),</span>
 <span class='co'>#   tar_target(</span>
 <span class='co'>#     your_target,</span>
@@ -340,7 +307,7 @@ For more information, visit
 <span class='fu'><a href='https://rdrr.io/r/base/files.html'>file.create</a></span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"a.txt"</span>, <span class='st'>"b.txt"</span><span class='op'>)</span><span class='op'>)</span>
 <span class='fu'>targets</span><span class='fu'>::</span><span class='fu'><a href='https://wlandau.github.io/targets/reference/tar_script.html'>tar_script</a></span><span class='op'>(</span><span class='op'>{</span>
   <span class='fu'><a href='https://wlandau.github.io/targets/reference/tar_pipeline.html'>tar_pipeline</a></span><span class='op'>(</span>
-    <span class='fu'>tarchetypes</span><span class='fu'>::</span><span class='fu'>tar_files</span><span class='op'>(</span><span class='va'>x</span>, <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"a.txt"</span>, <span class='st'>"b.txt"</span><span class='op'>)</span><span class='op'>)</span>
+    <span class='fu'>tarchetypes</span><span class='fu'>::</span><span class='fu'>tar_files_input</span><span class='op'>(</span><span class='va'>x</span>, <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"a.txt"</span>, <span class='st'>"b.txt"</span><span class='op'>)</span><span class='op'>)</span>
   <span class='op'>)</span>
 <span class='op'>}</span><span class='op'>)</span>
 <span class='fu'>targets</span><span class='fu'>::</span><span class='fu'><a href='https://wlandau.github.io/targets/reference/tar_make.html'>tar_make</a></span><span class='op'>(</span><span class='op'>)</span>

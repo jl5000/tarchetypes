@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Easy branching over dynamic files or urls (raw version). — tar_files_raw • tarchetypes</title>
+<title>Easy dynamic branching over files or urls (raw version). — tar_files_raw • tarchetypes</title>
 
 <!-- favicons -->
 <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
@@ -46,7 +46,7 @@
 
 
 
-<meta property="og:title" content="Easy branching over dynamic files or urls (raw version). — tar_files_raw" />
+<meta property="og:title" content="Easy dynamic branching over files or urls (raw version). — tar_files_raw" />
 <meta property="og:description" content="Shorthand for a pattern that correctly
 branches over files or urls." />
 <meta property="og:image" content="/logo.svg" />
@@ -123,7 +123,7 @@ branches over files or urls." />
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Easy branching over dynamic files or urls (raw version).</h1>
+    <h1>Easy dynamic branching over files or urls (raw version).</h1>
     <small class="dont-index">Source: <a href='https://github.com/wlandau/tarchetypes/blob/master/R/tar_files.R'><code>R/tar_files.R</code></a></small>
     <div class="hidden name"><code>tar_files_raw.Rd</code></div>
     </div>
@@ -138,7 +138,7 @@ branches over files or urls.</p>
   <span class='va'>command</span>,
   packages <span class='op'>=</span> <span class='fu'>targets</span><span class='fu'>::</span><span class='fu'><a href='https://wlandau.github.io/targets/reference/tar_option_get.html'>tar_option_get</a></span><span class='op'>(</span><span class='st'>"packages"</span><span class='op'>)</span>,
   library <span class='op'>=</span> <span class='fu'>targets</span><span class='fu'>::</span><span class='fu'><a href='https://wlandau.github.io/targets/reference/tar_option_get.html'>tar_option_get</a></span><span class='op'>(</span><span class='st'>"library"</span><span class='op'>)</span>,
-  format <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"file"</span>, <span class='st'>"url"</span><span class='op'>)</span>,
+  format <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"file"</span>, <span class='st'>"url"</span>, <span class='st'>"aws_file"</span><span class='op'>)</span>,
   iteration <span class='op'>=</span> <span class='fu'>targets</span><span class='fu'>::</span><span class='fu'><a href='https://wlandau.github.io/targets/reference/tar_option_get.html'>tar_option_get</a></span><span class='op'>(</span><span class='st'>"iteration"</span><span class='op'>)</span>,
   error <span class='op'>=</span> <span class='fu'>targets</span><span class='fu'>::</span><span class='fu'><a href='https://wlandau.github.io/targets/reference/tar_option_get.html'>tar_option_get</a></span><span class='op'>(</span><span class='st'>"error"</span><span class='op'>)</span>,
   memory <span class='op'>=</span> <span class='fu'>targets</span><span class='fu'>::</span><span class='fu'><a href='https://wlandau.github.io/targets/reference/tar_option_get.html'>tar_option_get</a></span><span class='op'>(</span><span class='st'>"memory"</span><span class='op'>)</span>,
@@ -284,12 +284,6 @@ If <code>"worker"</code>, the worker loads the targets dependencies.</p></td>
       <td><p>An optional object from <code><a href='https://wlandau.github.io/targets/reference/tar_cue.html'>tar_cue()</a></code>
 to customize the rules that decide whether the target is up to date.
 Only applies to the downstream target. The upstream target always runs.</p></td>
-    </tr>
-    <tr>
-      <th>tidy_eval</th>
-      <td><p>Whether to invoke tidy evaluation
-(e.g. the <code>!!</code> operator from <code>rlang</code>) as soon as the target is defined
-(before <code><a href='https://wlandau.github.io/targets/reference/tar_make.html'>tar_make()</a></code>). Applies to the <code>command</code> argument.</p></td>
     </tr>
     </table>
 
