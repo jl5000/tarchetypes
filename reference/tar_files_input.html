@@ -139,6 +139,7 @@ branches over known existing files or urls.</p>
     <pre class="usage"><span class='fu'>tar_files_input</span><span class='op'>(</span>
   <span class='va'>name</span>,
   <span class='va'>files</span>,
+  batches <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/length.html'>length</a></span><span class='op'>(</span><span class='va'>files</span><span class='op'>)</span>,
   format <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"file"</span>, <span class='st'>"url"</span>, <span class='st'>"aws_file"</span><span class='op'>)</span>,
   iteration <span class='op'>=</span> <span class='fu'>targets</span><span class='fu'>::</span><span class='fu'><a href='https://wlandau.github.io/targets/reference/tar_option_get.html'>tar_option_get</a></span><span class='op'>(</span><span class='st'>"iteration"</span><span class='op'>)</span>,
   error <span class='op'>=</span> <span class='fu'>targets</span><span class='fu'>::</span><span class='fu'><a href='https://wlandau.github.io/targets/reference/tar_option_get.html'>tar_option_get</a></span><span class='op'>(</span><span class='st'>"error"</span><span class='op'>)</span>,
@@ -162,26 +163,25 @@ branches over known existing files or urls.</p>
 to track for changes.</p></td>
     </tr>
     <tr>
+      <th>batches</th>
+      <td><p>Positive integer of length 1, number of batches
+to partition the files. The default is one file per batch
+(maximum number of batches) which is simplest to handle but
+could cause a lot of overhead and consume a lot of computing resources.
+Consider reducing the number of batches below the number of files
+for heavy workloads.</p></td>
+    </tr>
+    <tr>
       <th>format</th>
       <td><p>Character, either <code>"file"</code> or <code>"url"</code>. See the <code>format</code>
 argument of <code><a href='https://wlandau.github.io/targets/reference/tar_target.html'>targets::tar_target()</a></code> for details.</p></td>
     </tr>
     <tr>
       <th>iteration</th>
-      <td><p>Character of length 1, name of the iteration mode
-of the target. Choices:</p><ul>
-<li><p><code>"vector"</code>: branching happens with <code><a href='https://vctrs.r-lib.org/reference/vec_slice.html'>vctrs::vec_slice()</a></code> and
-aggregation happens with <code><a href='https://vctrs.r-lib.org/reference/vec_c.html'>vctrs::vec_c()</a></code>.</p></li>
-<li><p><code>"list"</code>, branching happens with <code>[[]]</code> and aggregation happens with
-<code><a href='https://rdrr.io/r/base/list.html'>list()</a></code>.</p></li>
-<li><p><code>"group"</code>: <code>dplyr::group_by()</code>-like functionality to branch over
-subsets of a data frame. The target's return value must be a data
-frame with a special <code>tar_group</code> column of consecutive integers
-from 1 through the number of groups. Each integer designates a group,
-and a branch is created for each collection of rows in a group.
-See the <code><a href='https://wlandau.github.io/targets/reference/tar_group.html'>tar_group()</a></code> function to see how you can
-create the special <code>tar_group</code> column with <code>dplyr::group_by()</code>.</p></li>
-</ul></td>
+      <td><p>Character, iteration method. Must be a method
+supported by the <code>iteration</code> argument of <code><a href='https://wlandau.github.io/targets/reference/tar_target.html'>targets::tar_target()</a></code>.
+The iteration method for the upstream target is always <code>"list"</code>
+in order to support batching.</p></td>
     </tr>
     <tr>
       <th>error</th>
@@ -266,7 +266,10 @@ exist and are known in advance. Whereas <code><a href='tar_files.html'>tar_files
 always appears outdated (e.g. with <code><a href='https://wlandau.github.io/targets/reference/tar_outdated.html'>tar_outdated()</a></code>)
 because it always needs to check which files it needs to
 branch over, <code>tar_files_input()</code> will appear up to date
-if the files have not changed since last <code><a href='https://wlandau.github.io/targets/reference/tar_make.html'>tar_make()</a></code>.</p>
+if the files have not changed since last <code><a href='https://wlandau.github.io/targets/reference/tar_make.html'>tar_make()</a></code>.
+In addition, <code>tar_files_input()</code> automatically groups
+input files into batches to reduce overhead and
+increase the efficiency of parallel processing.</p>
 <p><code>tar_files_input()</code> creates a pair of targets, one upstream
 and one downstream. The upstream target does some work
 and returns some file paths, and the downstream
@@ -282,12 +285,17 @@ For more information, visit
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'><span class='kw'>if</span> <span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/identical.html'>identical</a></span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/Sys.getenv.html'>Sys.getenv</a></span><span class='op'>(</span><span class='st'>"TARCHETYPES_LONG_EXAMPLES"</span><span class='op'>)</span>, <span class='st'>"true"</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>{</span>
 <span class='co'># Without loss of generality,</span>
-<span class='co'># tar_files_input(your_target, c("a.txt", "b.txt"))</span>
+<span class='co'># tar_files_input(</span>
+<span class='co'>#   your_target,</span>
+<span class='co'>#   files = c("a.txt", "b.txt", "c.txt", "d.txt")),</span>
+<span class='co'>#   batches = 2</span>
+<span class='co'># )</span>
 <span class='co'># is equivalent to:</span>
 <span class='co'># list(</span>
 <span class='co'>#   tar_target(</span>
 <span class='co'>#     your_target_files,</span>
-<span class='co'>#     c("a.txt", "b.txt"),</span>
+<span class='co'>#     list(c("a.txt", "b.txt"), c("c.txt", "d.txt")),</span>
+<span class='co'>#     iteration = "list",</span>
 <span class='co'>#     deployment = "main",</span>
 <span class='co'>#     storage = "main",</span>
 <span class='co'>#     retrieval = "main"</span>
@@ -304,16 +312,20 @@ For more information, visit
 <span class='co'># )</span>
 <span class='co'># Try it out.</span>
 <span class='fu'>targets</span><span class='fu'>::</span><span class='fu'><a href='https://wlandau.github.io/targets/reference/tar_dir.html'>tar_dir</a></span><span class='op'>(</span><span class='op'>{</span>
-<span class='fu'><a href='https://rdrr.io/r/base/files.html'>file.create</a></span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"a.txt"</span>, <span class='st'>"b.txt"</span><span class='op'>)</span><span class='op'>)</span>
+<span class='fu'><a href='https://rdrr.io/r/base/files.html'>file.create</a></span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"a.txt"</span>, <span class='st'>"b.txt"</span>, <span class='st'>"c.txt"</span>, <span class='st'>"d.txt"</span><span class='op'>)</span><span class='op'>)</span>
 <span class='fu'>targets</span><span class='fu'>::</span><span class='fu'><a href='https://wlandau.github.io/targets/reference/tar_script.html'>tar_script</a></span><span class='op'>(</span><span class='op'>{</span>
   <span class='fu'><a href='https://wlandau.github.io/targets/reference/tar_pipeline.html'>tar_pipeline</a></span><span class='op'>(</span>
-    <span class='fu'>tarchetypes</span><span class='fu'>::</span><span class='fu'>tar_files_input</span><span class='op'>(</span><span class='va'>x</span>, <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"a.txt"</span>, <span class='st'>"b.txt"</span><span class='op'>)</span><span class='op'>)</span>
+    <span class='fu'>tarchetypes</span><span class='fu'>::</span><span class='fu'>tar_files_input</span><span class='op'>(</span>
+      <span class='va'>x</span>,
+      <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"a.txt"</span>, <span class='st'>"b.txt"</span>, <span class='st'>"c.txt"</span>, <span class='st'>"d.txt"</span><span class='op'>)</span>,
+      batches <span class='op'>=</span> <span class='fl'>2</span>
+    <span class='op'>)</span>
   <span class='op'>)</span>
 <span class='op'>}</span><span class='op'>)</span>
 <span class='fu'>targets</span><span class='fu'>::</span><span class='fu'><a href='https://wlandau.github.io/targets/reference/tar_make.html'>tar_make</a></span><span class='op'>(</span><span class='op'>)</span>
 <span class='co'># Should be up to date now.</span>
 <span class='fu'>targets</span><span class='fu'>::</span><span class='fu'><a href='https://wlandau.github.io/targets/reference/tar_make.html'>tar_make</a></span><span class='op'>(</span><span class='op'>)</span>
-<span class='co'># If we change one file, `tar_make()` will only rerun one branch.</span>
+<span class='co'># If we change one file, `tar_make()` will only rerun one batch.</span>
 <span class='fu'><a href='https://rdrr.io/r/base/writeLines.html'>writeLines</a></span><span class='op'>(</span><span class='st'>"a"</span>, <span class='st'>"a.txt"</span><span class='op'>)</span>
 <span class='fu'>targets</span><span class='fu'>::</span><span class='fu'><a href='https://wlandau.github.io/targets/reference/tar_make.html'>tar_make</a></span><span class='op'>(</span><span class='op'>)</span>
 <span class='op'>}</span><span class='op'>)</span>
