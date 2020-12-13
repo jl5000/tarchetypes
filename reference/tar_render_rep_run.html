@@ -6,7 +6,8 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Render an R Markdown report inside a tar_render() target. — tar_render_run • tarchetypes</title>
+<title>Render a batch of parameterized R Markdown reports
+inside a tar_render_rep() target. — tar_render_rep_run • tarchetypes</title>
 
 <!-- favicons -->
 <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
@@ -46,7 +47,8 @@
 
 
 
-<meta property="og:title" content="Render an R Markdown report inside a tar_render() target. — tar_render_run" />
+<meta property="og:title" content="Render a batch of parameterized R Markdown reports
+inside a tar_render_rep() target. — tar_render_rep_run" />
 <meta property="og:description" content="Internal function needed for tar_render().
 Users should not invoke it directly." />
 <meta property="og:image" content="/logo.svg" />
@@ -123,9 +125,10 @@ Users should not invoke it directly." />
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Render an R Markdown report inside a <code>tar_render()</code> target.</h1>
-    <small class="dont-index">Source: <a href='https://github.com/wlandau/tarchetypes/blob/master/R/tar_render_raw.R'><code>R/tar_render_raw.R</code></a></small>
-    <div class="hidden name"><code>tar_render_run.Rd</code></div>
+    <h1>Render a batch of parameterized R Markdown reports
+inside a <code>tar_render_rep()</code> target.</h1>
+    <small class="dont-index">Source: <a href='https://github.com/wlandau/tarchetypes/blob/master/R/tar_render_rep_raw.R'><code>R/tar_render_rep_raw.R</code></a></small>
+    <div class="hidden name"><code>tar_render_rep_run.Rd</code></div>
     </div>
 
     <div class="ref-description">
@@ -133,7 +136,7 @@ Users should not invoke it directly." />
 Users should not invoke it directly.</p>
     </div>
 
-    <pre class="usage"><span class='fu'>tar_render_run</span><span class='op'>(</span><span class='va'>path</span>, <span class='va'>args</span>, <span class='va'>deps</span><span class='op'>)</span></pre>
+    <pre class="usage"><span class='fu'>tar_render_rep_run</span><span class='op'>(</span><span class='va'>path</span>, <span class='va'>params</span>, <span class='va'>args</span>, <span class='va'>deps</span><span class='op'>)</span></pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -149,7 +152,7 @@ Users should not invoke it directly.</p>
     <tr>
       <th>deps</th>
       <td><p>An unnamed list of target dependencies of the R Markdown
-report, automatically created by <code><a href='tar_render.html'>tar_render()</a></code>.</p></td>
+report, automatically created by <code><a href='tar_render_rep.html'>tar_render_rep()</a></code>.</p></td>
     </tr>
     </table>
 
